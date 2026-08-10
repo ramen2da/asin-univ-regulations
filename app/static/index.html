@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>아신대학교 규정정보시스템</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>아신대학교 규정정보시스템</h1>
+    <nav class="top-nav">
+      <a href="#" id="navRecent">최근 제·개정</a>
+      <a href="#" id="navRevisions">개정내역</a>
+      <a href="#" id="navForms">서식 정보</a>
+      <a href="admin.html">관리자</a>
+    </nav>
+    <div class="search-bar">
+      <select id="searchScope">
+        <option value="title">규정명</option>
+        <option value="body">규정내용</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+      <button id="searchBtn">검색</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav id="tree" class="tree"></nav>
+    <main id="content" class="content">
+      <div id="contentHeader" class="content-header"></div>
+      <div id="contentBody" class="content-body">
+        <p class="placeholder">왼쪽에서 분류를 선택하거나 검색어를 입력하세요.</p>
+      </div>
+    </main>
+    <aside id="detailSidebar" class="detail-sidebar"></aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

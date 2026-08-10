@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+data/regulations.db
+
+규정집*.pdf
+
+.env
