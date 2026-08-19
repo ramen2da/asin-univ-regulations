@@ -30,6 +30,11 @@ async function fetchJSON(url) {
   return res.json();
 }
 
+const ICON_FOLDER =
+  '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>';
+const ICON_DOC =
+  '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>';
+
 function renderTreeNode(node) {
   const li = document.createElement("li");
   li.className = node.type;
@@ -51,7 +56,7 @@ function renderTreeNode(node) {
 
     const label = document.createElement("span");
     label.className = "label cat-link";
-    label.textContent = node.name;
+    label.innerHTML = `${ICON_FOLDER}<span>${node.name}</span>`;
     label.addEventListener("click", () => {
       li.classList.remove("collapsed");
       arrow.textContent = "▾";
@@ -71,7 +76,7 @@ function renderTreeNode(node) {
     const a = document.createElement("a");
     a.href = `#reg-${node.id}`;
     a.dataset.regId = node.id;
-    a.textContent = node.title;
+    a.innerHTML = `${ICON_DOC}<span>${node.title}</span>`;
     a.addEventListener("click", (e) => {
       e.preventDefault();
       loadDetail(node.id);

@@ -70,26 +70,29 @@ header h1 {
 
 .search-bar {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.16);
+  padding: 4px;
+  border-radius: 999px;
 }
 .search-bar select, .search-bar input, .search-bar button {
-  padding: 7px 12px;
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  border: none;
+  border-radius: 999px;
   font-size: 13.5px;
   font-family: inherit;
 }
 .search-bar select, .search-bar input {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--surface);
   color: var(--text);
 }
 .search-bar input {
-  width: 240px;
+  width: 220px;
 }
 .search-bar input:focus, .search-bar select:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.25);
+  box-shadow: 0 0 0 2px var(--accent) inset;
 }
 .search-bar button {
   background: var(--accent);
@@ -107,27 +110,33 @@ header h1 {
   flex: 1;
   min-height: 0;
   overflow: hidden;
+  gap: 16px;
+  padding: 16px;
 }
 .tree {
-  width: 300px;
+  width: 290px;
   flex-shrink: 0;
   background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 16px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 14px 12px;
   height: 100%;
   overflow-y: auto;
 }
 
 .detail-sidebar {
-  width: 260px;
+  width: 250px;
   flex-shrink: 0;
   background: var(--surface);
-  border-left: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   height: 100%;
   overflow-y: auto;
 }
 .detail-sidebar:empty {
-  border-left: none;
+  display: none;
 }
 .sidebar-section {
   padding: 14px 16px;
@@ -180,7 +189,7 @@ header h1 {
 }
 .tree .category > .node-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 5px;
   padding: 6px 6px;
   margin: 0 -6px;
@@ -191,9 +200,31 @@ header h1 {
 .tree .category > .node-header:hover {
   background: var(--brand-tint);
 }
+.tree .category > .node-header .toggle-arrow {
+  margin-top: 2px;
+}
 .tree .category > .node-header .label {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
   font-weight: 600;
   font-size: 13.5px;
+  color: var(--text);
+}
+.tree .category > .node-header .label span {
+  flex: 1;
+  min-width: 0;
+}
+.tree .icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.55;
+}
+.tree .category > .node-header .icon {
+  color: var(--brand);
 }
 .tree .category .toggle-arrow {
   display: inline-block;
@@ -207,7 +238,9 @@ header h1 {
   display: none;
 }
 .tree .regulation a {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
   padding: 5px 8px;
   color: var(--text);
   text-decoration: none;
@@ -215,6 +248,13 @@ header h1 {
   font-size: 13px;
   line-height: 1.45;
   transition: background 0.12s ease, color 0.12s ease;
+}
+.tree .regulation a .icon {
+  margin-top: 3px;
+}
+.tree .regulation a span {
+  flex: 1;
+  min-width: 0;
 }
 .tree .regulation a:hover {
   background: var(--brand-tint);
@@ -224,6 +264,10 @@ header h1 {
   background: var(--brand);
   color: #fff;
   font-weight: 500;
+}
+.tree .regulation a.active .icon {
+  color: #fff;
+  opacity: 0.9;
 }
 .tree .cat-link {
   cursor: pointer;
@@ -240,20 +284,28 @@ header h1 {
   min-width: 0;
   height: 100%;
   overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 .content-header {
   flex-shrink: 0;
-  padding: 16px 32px 0;
-  background: var(--surface);
+  padding: 20px 40px 0;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
 }
 .content-header:empty {
   padding: 0;
-  background: none;
 }
 .content-body {
   flex: 1;
   overflow-y: auto;
-  padding: 4px 32px 28px;
+  padding: 4px 40px 32px;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
 }
 .placeholder {
   color: var(--text-muted);
@@ -331,13 +383,24 @@ table.reg-list tbody tr:last-child td {
 .doc-title-bar {
   position: relative;
   text-align: center;
-  padding: 4px 90px 10px;
-  margin-bottom: 12px;
-  border-bottom: 2px solid var(--brand);
+  padding: 6px 90px 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.doc-title-bar::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--brand);
 }
 .doc-title-bar h2 {
   margin: 0;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.01em;
@@ -422,20 +485,27 @@ table.compare-table .compare-new {
   width: 42.5%;
 }
 .article {
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   scroll-margin-top: 16px;
-  line-height: 1.7;
+  line-height: 1.75;
+  font-size: 14.5px;
 }
-.article .chapter-tag {
+.chapter-tag {
+  display: inline-block;
   font-size: 12px;
   color: var(--brand);
   font-weight: 700;
-  margin: 20px 0 8px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--border);
+  margin: 24px 0 10px;
+  padding: 4px 13px;
+  background: var(--brand-tint);
+  border-radius: 999px;
+}
+.chapter-tag:first-child {
+  margin-top: 0;
 }
 .article .art-no {
   font-weight: 700;
+  color: var(--brand-dark);
   margin-right: 4px;
 }
 .article .amend-tag {
@@ -520,12 +590,23 @@ table.compare-table .compare-new {
     height: auto;
     overflow: visible;
   }
-  .layout, .content, .content-body {
+  .layout {
     height: auto;
     overflow: visible;
     display: block;
+    padding: 0;
   }
-  .content-header {
+  .content {
+    height: auto;
+    overflow: visible;
+    display: block;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .content-header, .content-body {
+    max-width: none;
+    margin: 0;
     padding: 0;
   }
 }
