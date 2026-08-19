@@ -549,12 +549,21 @@ table.compare-table .compare-artno {
 }
 table.compare-table .compare-old {
   width: 42.5%;
-  color: #97a0ac;
-  text-decoration: line-through;
-  text-decoration-color: #ccd2dc;
 }
 table.compare-table .compare-new {
   width: 42.5%;
+}
+.diff-del {
+  color: var(--brand);
+  text-decoration: line-through;
+  text-decoration-color: var(--brand);
+}
+.diff-ins {
+  color: var(--brand);
+  font-weight: 700;
+  background: var(--brand-tint);
+  border-radius: 3px;
+  padding: 0 1px;
 }
 .article {
   margin-bottom: 18px;

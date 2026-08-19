@@ -495,17 +495,70 @@ async function loadDetail(id) {
   });
 }
 
+function escapeHtml(s) {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function diffBodies(oldText, newText) {
+  const tokenize = (s) => s.match(/\S+|\s+/g) || [];
+  const a = tokenize(oldText || "");
+  const b = tokenize(newText || "");
+  const n = a.length;
+  const m = b.length;
+
+  // LCS length table, built backwards so it can be walked forwards below.
+  const dp = Array.from({ length: n + 1 }, () => new Uint32Array(m + 1));
+  for (let i = n - 1; i >= 0; i--) {
+    for (let j = m - 1; j >= 0; j--) {
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+  }
+
+  let oldHtml = "";
+  let newHtml = "";
+  let i = 0;
+  let j = 0;
+  while (i < n && j < m) {
+    if (a[i] === b[j]) {
+      const same = escapeHtml(a[i]);
+      oldHtml += same;
+      newHtml += same;
+      i++;
+      j++;
+    } else if (dp[i + 1][j] >= dp[i][j + 1]) {
+      oldHtml += `<span class="diff-del">${escapeHtml(a[i])}</span>`;
+      i++;
+    } else {
+      newHtml += `<span class="diff-ins">${escapeHtml(b[j])}</span>`;
+      j++;
+    }
+  }
+  while (i < n) {
+    oldHtml += `<span class="diff-del">${escapeHtml(a[i])}</span>`;
+    i++;
+  }
+  while (j < m) {
+    newHtml += `<span class="diff-ins">${escapeHtml(b[j])}</span>`;
+    j++;
+  }
+  return { oldHtml, newHtml };
+}
+
 function renderCompareRows(changes) {
   return changes
     .map((c) => {
       const artNo = c.article_sub_no
         ? `제${c.article_no}조의${c.article_sub_no}`
         : `제${c.article_no}조`;
+      const { oldHtml, newHtml } = diffBodies(c.old_body, c.new_body);
       return `
         <tr>
           <td class="compare-artno">${artNo}${c.article_title ? `(${c.article_title})` : ""}</td>
-          <td class="compare-old">${highlightAmendments(formatArticleBody(c.old_body))}</td>
-          <td class="compare-new">${highlightAmendments(formatArticleBody(c.new_body))}</td>
+          <td class="compare-old">${highlightAmendments(formatArticleBody(oldHtml))}</td>
+          <td class="compare-new">${highlightAmendments(formatArticleBody(newHtml))}</td>
         </tr>`;
     })
     .join("");
