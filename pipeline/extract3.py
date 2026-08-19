@@ -36,7 +36,7 @@ def normalize_ws(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 
-def group_regulations(pages):
+def group_regulations(pages, force_new_group_at=frozenset(), force_continue_at=frozenset()):
     """Group consecutive pages into regulations using the running header's leading
     index number ('N.') as the continuation key - robust to department-table
     suffixes like '3. 사무분장 규정-기획처'."""
@@ -63,8 +63,8 @@ def group_regulations(pages):
         # 특별지원위원회 운영규정") and pdf index 492 ("15. 교육만족도조사 규정") share the
         # same mistaken running-header number for two genuinely different regulations
         # (the real "14" was never printed). Force a boundary there.
-        force_new_group = idx in FORCE_NEW_GROUP_AT
-        force_continue = idx in FORCE_CONTINUE_AT
+        force_new_group = idx in force_new_group_at
+        force_continue = idx in force_continue_at
 
         try:
             is_backward_typo = int(idx_no) < int(current['index_no']) and int(idx_no) != 1
@@ -250,8 +250,9 @@ def parse_body(lines):
     return articles, addenda, attachments
 
 
-def main():
-    doc = fitz.open(PDF_PATH)
+def extract_pdf(pdf_path, force_new_group_at=frozenset(), force_continue_at=frozenset()):
+    """Parse a regulation-book PDF into (results, problems, toc_entries, groups)."""
+    doc = fitz.open(pdf_path)
     pages = [doc[i].get_text() for i in range(len(doc))]
 
     toc_entries = parse_toc(doc)
@@ -259,9 +260,7 @@ def main():
     pages_for_grouping = list(pages)
     for i in TOC_PAGE_RANGE:
         pages_for_grouping[i] = ''
-    groups = group_regulations(pages_for_grouping)
-
-    print(f'TOC 항목 수: {len(toc_entries)} / 헤더 그룹 수: {len(groups)}', file=sys.stderr)
+    groups = group_regulations(pages_for_grouping, force_new_group_at, force_continue_at)
 
     n = min(len(toc_entries), len(groups))
     results = []
@@ -301,6 +300,17 @@ def main():
         parsed_t_norm = title.replace(' ', '')
         if toc_t_norm and toc_t_norm not in parsed_t_norm and parsed_t_norm not in toc_t_norm:
             problems.append((i, toc_e['title'], f'title mismatch vs parsed="{title}"'))
+
+    doc.close()
+    return results, problems, toc_entries, groups
+
+
+def main():
+    results, problems, toc_entries, groups = extract_pdf(
+        PDF_PATH, FORCE_NEW_GROUP_AT, FORCE_CONTINUE_AT
+    )
+
+    print(f'TOC 항목 수: {len(toc_entries)} / 헤더 그룹 수: {len(groups)}', file=sys.stderr)
 
     os.makedirs('pipeline/output', exist_ok=True)
     with open(OUT_PATH, 'w', encoding='utf-8') as f:

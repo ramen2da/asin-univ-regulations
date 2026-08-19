@@ -602,7 +602,7 @@ async function loadRevisionsList(page) {
     </div>` : "";
 
   setContent(
-    `<h2>개정내역</h2><p class="result-count">총 ${data.total}건 (관리자 화면에서 수정된 조문의 개정 전·후 비교를 볼 수 있습니다)</p>`,
+    `<h2>개정내역</h2><p class="result-count">총 ${data.total}건 (개정 전·후 조문을 비교해 볼 수 있는 이력만 모았습니다)</p>`,
     `<table class="reg-list">
       <thead>
         <tr><th>규정명</th><th>개정일자</th><th>변경 조문</th><th>개정 사유</th></tr>

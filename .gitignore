@@ -7,4 +7,8 @@ data/regulations.db
 
 규정집*.pdf
 
+pipeline/output/history/
+pipeline/output/history_debug.json
+pipeline/output/revision_history_report.json
+
 .env
