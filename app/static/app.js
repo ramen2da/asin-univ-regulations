@@ -70,6 +70,7 @@ function renderTreeNode(node) {
   } else {
     const a = document.createElement("a");
     a.href = `#reg-${node.id}`;
+    a.dataset.regId = node.id;
     a.textContent = node.title;
     a.addEventListener("click", (e) => {
       e.preventDefault();
@@ -89,6 +90,23 @@ async function loadTree() {
   });
   treeEl.innerHTML = "";
   treeEl.appendChild(root);
+}
+
+function markActiveTreeLink(id) {
+  treeEl.querySelectorAll("a.active").forEach((a) => a.classList.remove("active"));
+  const link = treeEl.querySelector(`a[data-reg-id="${id}"]`);
+  if (!link) return;
+  link.classList.add("active");
+  let li = link.closest("li");
+  while (li) {
+    const parentCategory = li.parentElement.closest("li.category");
+    if (parentCategory) {
+      parentCategory.classList.remove("collapsed");
+      const arrow = parentCategory.querySelector(":scope > .node-header .toggle-arrow");
+      if (arrow) arrow.textContent = "▾";
+    }
+    li = parentCategory;
+  }
 }
 
 function isTopLevelCategory(name, data) {
@@ -372,6 +390,7 @@ async function loadDetail(id) {
     fetchJSON(`/api/regulations/${id}/revisions`),
   ]);
   location.hash = `reg-${id}`;
+  markActiveTreeLink(id);
 
   const amendHtml = r.amendments.length
     ? `<div class="amend-list">제·개정 이력: ${r.amendments
@@ -485,15 +504,22 @@ async function loadRecent() {
   clearSidebar();
   lastListView = () => loadRecent();
   const recent = await fetchJSON("/api/regulations/recent?limit=10");
-  const items = recent
-    .map((r) => `<li><a href="#reg-${r.id}" data-id="${r.id}">${r.title}</a> <span style="color:#999">(${r.latest_amend})</span></li>`)
+  const rows = recent
+    .map((r) => `<tr data-id="${r.id}"><td>${r.title}</td><td>${r.latest_amend}</td></tr>`)
     .join("");
-  setContent(`<h2>최근 제·개정 규정</h2>`, `<ul>${items}</ul>`);
-  contentBodyEl.querySelectorAll("a[data-id]").forEach((a) => {
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      loadDetail(Number(a.dataset.id));
-    });
+
+  setContent(
+    `<h2>최근 제·개정 규정</h2>`,
+    `<table class="reg-list">
+      <thead>
+        <tr><th>규정명</th><th>최근 개정일</th></tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="2">결과가 없습니다.</td></tr>'}</tbody>
+    </table>`
+  );
+
+  contentBodyEl.querySelectorAll("tbody tr[data-id]").forEach((tr) => {
+    tr.addEventListener("click", () => loadDetail(Number(tr.dataset.id)));
   });
 }
 
@@ -626,6 +652,8 @@ function initFromHash() {
 
 window.addEventListener("hashchange", initFromHash);
 
-loadTree();
-loadRecent();
-initFromHash();
+(async function init() {
+  await loadTree();
+  loadRecent();
+  initFromHash();
+})();
