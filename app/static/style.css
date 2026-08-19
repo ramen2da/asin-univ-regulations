@@ -344,6 +344,78 @@ table.reg-list tbody tr:last-child td {
   border-bottom: none;
 }
 
+table.body-hit-list td {
+  vertical-align: top;
+}
+.body-hit-reg {
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.body-hit-art {
+  color: var(--text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.body-hit-snippet {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.body-hit-snippet mark {
+  background: #fff1b8;
+  color: var(--text);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.rev-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+.rev-filter-bar input[type="text"],
+.rev-filter-bar input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-family: inherit;
+}
+.rev-filter-bar input[type="text"] {
+  width: 180px;
+}
+.rev-filter-bar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.rev-filter-bar button {
+  padding: 6px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: background 0.12s ease;
+}
+.rev-filter-bar button:hover {
+  background: var(--brand-tint);
+  border-color: var(--brand);
+  color: var(--brand);
+}
+#revFilterApply {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+#revFilterApply:hover {
+  background: var(--brand-dark);
+}
+
 .doc-header-top {
   display: flex;
   align-items: baseline;

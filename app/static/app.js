@@ -150,7 +150,56 @@ async function loadList(params, heading, page) {
   fetchParams.set("page_size", PAGE_SIZE);
 
   const data = await fetchJSON(`/api/regulations?${fetchParams.toString()}`);
-  renderList(data, heading, page);
+  if (data.scope === "body") {
+    renderBodySearchResults(data, heading, page);
+  } else {
+    renderList(data, heading, page);
+  }
+}
+
+function renderBodySearchResults(data, heading, page) {
+  clearSidebar();
+  const rows = data.results
+    .map((r) => {
+      const anchor = r.article_sub_no ? `article-${r.article_no}-${r.article_sub_no}` : `article-${r.article_no}`;
+      return `
+      <tr data-reg="${r.regulation_id}" data-anchor="${anchor}">
+        <td>
+          <div class="body-hit-reg">${r.regulation_title}</div>
+          <div class="body-hit-art">${r.article_label}</div>
+        </td>
+        <td class="body-hit-snippet">${r.snippet}</td>
+      </tr>`;
+    })
+    .join("");
+
+  const totalPages = Math.max(1, Math.ceil(data.total / PAGE_SIZE));
+  const pagerHtml = totalPages > 1 ? `
+    <div class="pager">
+      <button id="prevPage" ${page <= 1 ? "disabled" : ""}>&larr; 이전</button>
+      <span>${page} / ${totalPages} 페이지</span>
+      <button id="nextPage" ${page >= totalPages ? "disabled" : ""}>다음 &rarr;</button>
+    </div>` : "";
+
+  setContent(
+    `<h2>${heading}</h2><p class="result-count">총 ${data.total}건 (조문 기준)</p>`,
+    `<table class="reg-list body-hit-list">
+      <thead>
+        <tr><th>규정 / 조문</th><th>내용</th></tr>
+      </thead>
+      <tbody>${rows || '<tr><td colspan="2">결과가 없습니다.</td></tr>'}</tbody>
+    </table>
+    ${pagerHtml}`
+  );
+
+  contentBodyEl.querySelectorAll("tbody tr[data-reg]").forEach((tr) => {
+    tr.addEventListener("click", () => goToArticle(Number(tr.dataset.reg), tr.dataset.anchor));
+  });
+
+  const prevBtn = document.getElementById("prevPage");
+  const nextBtn = document.getElementById("nextPage");
+  if (prevBtn) prevBtn.addEventListener("click", () => loadList(currentListParams, currentListHeading, page - 1));
+  if (nextBtn) nextBtn.addEventListener("click", () => loadList(currentListParams, currentListHeading, page + 1));
 }
 
 function renderList(data, heading, page) {
@@ -575,10 +624,18 @@ async function loadAttachmentsList(page) {
   if (nextBtn) nextBtn.addEventListener("click", () => loadAttachmentsList(page + 1));
 }
 
-async function loadRevisionsList(page) {
+let revisionFilters = { q: "", dateFrom: "", dateTo: "" };
+
+async function loadRevisionsList(page, filters) {
+  if (filters) revisionFilters = filters;
   clearSidebar();
   lastListView = () => loadRevisionsList(page);
+
   const params = new URLSearchParams({ page, page_size: PAGE_SIZE });
+  if (revisionFilters.q) params.set("q", revisionFilters.q);
+  if (revisionFilters.dateFrom) params.set("date_from", revisionFilters.dateFrom);
+  if (revisionFilters.dateTo) params.set("date_to", revisionFilters.dateTo);
+
   const data = await fetchJSON(`/api/revisions?${params.toString()}`);
 
   const rows = data.results
@@ -602,12 +659,20 @@ async function loadRevisionsList(page) {
     </div>` : "";
 
   setContent(
-    `<h2>개정내역</h2><p class="result-count">총 ${data.total}건 (개정 전·후 조문을 비교해 볼 수 있는 이력만 모았습니다)</p>`,
+    `<h2>개정내역</h2>
+     <div class="rev-filter-bar">
+       <input type="text" id="revFilterQ" placeholder="규정명으로 필터" value="${revisionFilters.q}">
+       <label>부터 <input type="date" id="revFilterFrom" value="${revisionFilters.dateFrom}"></label>
+       <label>까지 <input type="date" id="revFilterTo" value="${revisionFilters.dateTo}"></label>
+       <button id="revFilterApply">필터 적용</button>
+       <button id="revFilterReset">초기화</button>
+     </div>
+     <p class="result-count">총 ${data.total}건 (개정 전·후 조문을 비교해 볼 수 있는 이력만 모았습니다)</p>`,
     `<table class="reg-list">
       <thead>
         <tr><th>규정명</th><th>개정일자</th><th>변경 조문</th><th>개정 사유</th></tr>
       </thead>
-      <tbody>${rows || '<tr><td colspan="4">등록된 개정내역이 없습니다.</td></tr>'}</tbody>
+      <tbody>${rows || '<tr><td colspan="4">조건에 맞는 개정내역이 없습니다.</td></tr>'}</tbody>
     </table>
     ${pagerHtml}`
   );
@@ -620,6 +685,21 @@ async function loadRevisionsList(page) {
   const nextBtn = document.getElementById("nextRevPage");
   if (prevBtn) prevBtn.addEventListener("click", () => loadRevisionsList(page - 1));
   if (nextBtn) nextBtn.addEventListener("click", () => loadRevisionsList(page + 1));
+
+  const applyFilters = () => {
+    loadRevisionsList(1, {
+      q: document.getElementById("revFilterQ").value.trim(),
+      dateFrom: document.getElementById("revFilterFrom").value,
+      dateTo: document.getElementById("revFilterTo").value,
+    });
+  };
+  document.getElementById("revFilterApply").addEventListener("click", applyFilters);
+  document.getElementById("revFilterQ").addEventListener("keypress", (e) => {
+    if (e.key === "Enter") applyFilters();
+  });
+  document.getElementById("revFilterReset").addEventListener("click", () => {
+    loadRevisionsList(1, { q: "", dateFrom: "", dateTo: "" });
+  });
 }
 
 document.getElementById("navForms").addEventListener("click", (e) => {
@@ -632,7 +712,7 @@ document.getElementById("navRecent").addEventListener("click", (e) => {
 });
 document.getElementById("navRevisions").addEventListener("click", (e) => {
   e.preventDefault();
-  loadRevisionsList(1);
+  loadRevisionsList(1, { q: "", dateFrom: "", dateTo: "" });
 });
 
 searchBtn.addEventListener("click", runSearch);

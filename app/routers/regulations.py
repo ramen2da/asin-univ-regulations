@@ -1,10 +1,34 @@
+import html
 import json
+import re
 
 from fastapi import APIRouter, HTTPException, Query
 
 from db import get_connection
 
 router = APIRouter()
+
+SNIPPET_CONTEXT = 40
+
+
+def make_snippet(body, query, context=SNIPPET_CONTEXT):
+    idx = body.lower().find(query.lower())
+    if idx == -1:
+        return html.escape(body[:context * 2]) + ("…" if len(body) > context * 2 else "")
+
+    start = max(0, idx - context)
+    end = min(len(body), idx + len(query) + context)
+    prefix = "…" if start > 0 else ""
+    suffix = "…" if end < len(body) else ""
+    before = html.escape(body[start:idx])
+    match = html.escape(body[idx:idx + len(query)])
+    after = html.escape(body[idx + len(query):end])
+    return f"{prefix}{before}<mark>{match}</mark>{after}{suffix}"
+
+
+def article_label(no, sub_no, title):
+    base = f"제{no}조" + (f"의{sub_no}" if sub_no else "")
+    return f"{base}({title})" if title else base
 
 
 @router.get("/regulations")
@@ -19,6 +43,57 @@ def list_regulations(
 ):
     conn = get_connection()
 
+    if q and scope == "body":
+        where = ["r.status = '현행'", "a.body LIKE ?"]
+        params: list = [f"%{q}%"]
+        if category_l0:
+            where.append("r.category_l0 = ?")
+            params.append(category_l0)
+        if category_l1:
+            where.append("r.category_l1 = ?")
+            params.append(category_l1)
+        where_sql = " AND ".join(where)
+
+        base_from = f"""
+            FROM articles a
+            JOIN regulations r ON r.id = a.regulation_id
+            WHERE {where_sql}
+        """
+
+        total = conn.execute(f"SELECT COUNT(*) {base_from}", params).fetchone()[0]
+        offset = (page - 1) * page_size
+        rows = conn.execute(
+            f"""SELECT r.id AS regulation_id, r.title AS regulation_title,
+                       r.category_l0, r.category_l1,
+                       a.no, a.sub_no, a.title AS article_title, a.body
+                {base_from}
+                ORDER BY r.seq, a.ordinal
+                LIMIT ? OFFSET ?""",
+            [*params, page_size, offset],
+        ).fetchall()
+        conn.close()
+
+        results = [
+            {
+                "regulation_id": row["regulation_id"],
+                "regulation_title": row["regulation_title"],
+                "category_l0": row["category_l0"],
+                "category_l1": row["category_l1"],
+                "article_no": row["no"],
+                "article_sub_no": row["sub_no"],
+                "article_label": article_label(row["no"], row["sub_no"], row["article_title"]),
+                "snippet": make_snippet(row["body"], q),
+            }
+            for row in rows
+        ]
+        return {
+            "total": total,
+            "page": page,
+            "page_size": page_size,
+            "scope": "body",
+            "results": results,
+        }
+
     where = ["r.status = '현행'"]
     params: list = []
 
@@ -30,14 +105,8 @@ def list_regulations(
         params.append(category_l1)
 
     if q:
-        if scope == "title":
-            where.append("r.title LIKE ?")
-            params.append(f"%{q}%")
-        else:
-            where.append(
-                "r.id IN (SELECT regulation_id FROM articles WHERE body LIKE ?)"
-            )
-            params.append(f"%{q}%")
+        where.append("r.title LIKE ?")
+        params.append(f"%{q}%")
 
     where_sql = " AND ".join(where)
 
@@ -73,6 +142,7 @@ def list_regulations(
         "total": total,
         "page": page,
         "page_size": page_size,
+        "scope": "title",
         "results": [dict(r) for r in rows],
     }
 
@@ -187,19 +257,44 @@ def get_regulation(regulation_id: int):
 
 
 @router.get("/revisions")
-def list_all_revisions(page: int = 1, page_size: int = 20):
+def list_all_revisions(
+    q: str | None = None,
+    date_from: str | None = None,
+    date_to: str | None = None,
+    page: int = 1,
+    page_size: int = 20,
+):
     conn = get_connection()
-    total = conn.execute("SELECT COUNT(*) FROM revisions").fetchone()[0]
+
+    where = ["1=1"]
+    params: list = []
+    if q:
+        where.append("r.title LIKE ?")
+        params.append(f"%{q}%")
+    if date_from:
+        where.append("rev.revised_at >= ?")
+        params.append(date_from.replace("-", "."))
+    if date_to:
+        where.append("rev.revised_at <= ?")
+        params.append(date_to.replace("-", "."))
+    where_sql = " AND ".join(where)
+
+    base_from = f"""
+        FROM revisions rev
+        JOIN regulations r ON r.id = rev.regulation_id
+        WHERE {where_sql}
+    """
+
+    total = conn.execute(f"SELECT COUNT(*) {base_from}", params).fetchone()[0]
     offset = (page - 1) * page_size
     rows = conn.execute(
-        """SELECT rev.id, rev.regulation_id, r.title AS regulation_title,
-                  rev.revised_at, rev.summary,
-                  (SELECT COUNT(*) FROM revision_changes rc WHERE rc.revision_id = rev.id) AS changed_count
-           FROM revisions rev
-           JOIN regulations r ON r.id = rev.regulation_id
-           ORDER BY rev.created_at DESC
-           LIMIT ? OFFSET ?""",
-        (page_size, offset),
+        f"""SELECT rev.id, rev.regulation_id, r.title AS regulation_title,
+                   rev.revised_at, rev.summary,
+                   (SELECT COUNT(*) FROM revision_changes rc WHERE rc.revision_id = rev.id) AS changed_count
+            {base_from}
+            ORDER BY rev.revised_at DESC, rev.created_at DESC
+            LIMIT ? OFFSET ?""",
+        [*params, page_size, offset],
     ).fetchall()
     conn.close()
     return {
