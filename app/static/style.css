@@ -627,6 +627,8 @@ table.inline-table td {
   padding: 6px 10px;
   vertical-align: top;
   white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 table.inline-table tr:first-child td {
   background: var(--bg);

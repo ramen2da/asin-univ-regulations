@@ -5,6 +5,7 @@ and rendering them as real inline <table> HTML instead - reused for both the
 main 규정집 corpus and the standalone 학칙 PDF.
 """
 import html
+
 import fitz
 
 
@@ -104,6 +105,26 @@ def prose_lines_excluding_tables(page, tables, pad=2, markers=None, anchor_overr
         entries.insert(lo, (marker_key, markers[idx]))
 
     return [text for _, text in entries]
+
+
+def append_text_to_rendered_first_cell_of_last_row(marker_html, extra_text):
+    """For a marker that's already been rendered to an HTML string, when
+    the need to extend it is only discovered after the table's own page
+    has been left behind (its Table object is no longer safe to
+    re-.extract() from). Patches the string directly: splices the escaped
+    text into the first <td> of the last <tr>, i.e. the last row's first
+    column - the shape a table-continues-onto-the-next-page break usually
+    takes, since the first column is where a long list of row labels
+    (e.g. department names sharing one merged-cell value in the second
+    column) is most likely to overflow."""
+    tr_start = marker_html.rfind("<tr>")
+    if tr_start == -1:
+        return marker_html
+    td_end = marker_html.find("</td>", tr_start)
+    if td_end == -1:
+        return marker_html
+    escaped = html.escape(extra_text).replace("\n", "<br>")
+    return marker_html[:td_end] + f"<br>{escaped}" + marker_html[td_end:]
 
 
 def extract_page_range_as_pdf(src_doc_path, start_page, end_page, out_path):

@@ -8,7 +8,12 @@ from kiwipiepy import Kiwi
 
 sys.path.insert(0, os.path.dirname(__file__))
 from extract3 import parse_body, normalize_ws
-from table_extract_common import table_to_html, prose_lines_excluding_tables, extract_page_range_as_pdf
+from table_extract_common import (
+    table_to_html,
+    prose_lines_excluding_tables,
+    extract_page_range_as_pdf,
+    append_text_to_rendered_first_cell_of_last_row,
+)
 
 FORMS_DIR = os.path.join(os.path.dirname(__file__), "..", "app", "static", "forms")
 CURRENT_PDF_PATH = os.path.join(os.path.dirname(__file__), "..", "학칙_260623개정(재입학개정 반영).pdf")
@@ -30,6 +35,46 @@ def _get_kiwi():
     if _kiwi is None:
         _kiwi = Kiwi()
     return _kiwi
+
+
+ADDENDA_NEW_UNIT_RE = re.compile(
+    r'^(<div class="article-table-wrap"'  # inline table - always its own line
+    r"|[①-⑳]"  # 항 marker
+    r"|\d+\.\s"  # nested 호 list marker (\"1. \", \"2. \" ...)
+    r"|<별표|\[별표|<서식|\[서식"  # attachment/table caption headers
+    r"|\("  # a caption or \"(시행일)\"/\"(경과조치)\" style clause opener -
+             # in this document a raw PDF line never happens to start with an
+             # open paren mid-sentence, only at a genuine clause/caption start
+    r"|이\s*(변경\s*)?(학칙|규정)은)"  # a bare enactment-date sentence with
+                                        # no 항 marker (older 부칙 blocks that
+                                        # only ever had one clause)
+)
+
+
+def merge_addenda_lines(lines):
+    """부칙 text arrives as one raw PDF line per fragment - a single clause
+    routinely wraps across 5-10 lines with mid-word breaks (this document's
+    body text has the same problem, which is why fix_spacing_ko/kiwi
+    exists), but unlike article bodies, addenda were never rejoined into
+    one flowing line before being rendered - each fragment ended up on its
+    own <br>-separated row. Group fragments back into logical clauses,
+    splitting only where a genuinely new clause/caption/table starts."""
+    units = []
+    current = []
+    prev_was_table = False
+    for l in lines:
+        s = l.strip()
+        if not s:
+            continue
+        starts_new = prev_was_table or bool(ADDENDA_NEW_UNIT_RE.match(s))
+        if current and starts_new:
+            units.append(" ".join(current))
+            current = []
+        current.append(s)
+        prev_was_table = "<table" in s
+    if current:
+        units.append(" ".join(current))
+    return units
 
 
 def _tighten(m):
@@ -144,6 +189,7 @@ def extract_hakchik_pdf(pdf_path, seq=120, extract_attachments=False, forms_pref
 
     page_tables = {}
     page_markers = {}
+    trailing_continuation = None
     for i in range(len(doc)):
         page_i = doc[i]
         page_no = i + 1
@@ -176,10 +222,31 @@ def extract_hakchik_pdf(pdf_path, seq=120, extract_attachments=False, forms_pref
                 extract_page_range_as_pdf(pdf_path, page_no, page_no, os.path.join(FORMS_DIR, fname))
             markers = [table_to_html(t, source_url=source_url) for t in tables]
             page_markers[page_no] = markers
+        elif page_no == len(doc):
+            # The very last page of this document (only observed so far in
+            # the current edition) turns out to be nothing but the tail end
+            # of the last table's last cell - a long department-name list
+            # in <별표2>'s 문학사(B.A.) row runs past the page and continues
+            # here as plain ungridded text, since find_tables() is a
+            # per-page operation blind to that kind of continuation. A bare
+            # sentence (ending in "다.") is deliberately excluded here so
+            # this doesn't misfire if some future edition's last page is
+            # genuine standalone prose instead.
+            text = page_i.get_text().strip()
+            if text and not text.rstrip().endswith("다.") and page_tables:
+                trailing_continuation = text
+
+    if trailing_continuation:
+        last_table_page = max(page_tables.keys())
+        page_markers[last_table_page][-1] = append_text_to_rendered_first_cell_of_last_row(
+            page_markers[last_table_page][-1], trailing_continuation
+        )
 
     raw_lines = []
     for i in range(len(doc)):
         page_no = i + 1
+        if trailing_continuation and page_no == len(doc):
+            continue
         if page_no in page_tables:
             lines = prose_lines_excluding_tables(doc[i], page_tables[page_no], markers=page_markers[page_no])
         else:
@@ -248,7 +315,7 @@ def extract_hakchik_pdf(pdf_path, seq=120, extract_attachments=False, forms_pref
         a["body"] = fix_spacing_ko(a["body"])
         if a.get("title"):
             a["title"] = fix_spacing_ko(a["title"])
-    addenda = [fix_spacing_ko(l) for l in addenda]
+    addenda = [fix_spacing_ko(l) for l in merge_addenda_lines(addenda)]
 
     n_pages = len(doc)
     doc.close()
