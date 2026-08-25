@@ -11,7 +11,6 @@
 <body>
   <header>
     <div class="header-top">
-      <button id="treeToggleBtn" class="panel-toggle" title="분류 메뉴 접기/펴기" aria-label="분류 메뉴 접기/펴기">&#9776;</button>
       <h1 id="homeLink" title="홈으로 이동">아신대학교 규정정보시스템</h1>
       <nav class="top-nav">
         <a href="#" id="navRecent">최근 제·개정</a>
@@ -19,7 +18,6 @@
         <a href="#" id="navForms">서식 정보</a>
         <a href="admin.html">관리자</a>
       </nav>
-      <button id="sidebarToggleBtn" class="panel-toggle" title="조별목록 접기/펴기" aria-label="조별목록 접기/펴기" hidden>&#9776;</button>
       <img class="header-logo" src="img/acts-logo.png" alt="ACTS 아신대학교">
     </div>
     <div class="search-hero">
@@ -36,12 +34,14 @@
 
   <div class="layout">
     <nav id="tree" class="tree"></nav>
+    <button id="treeTab" class="panel-tab panel-tab-left" title="분류 메뉴 접기/펴기" aria-label="분류 메뉴 접기/펴기">&#8249;</button>
     <main id="content" class="content">
       <div id="contentHeader" class="content-header"></div>
       <div id="contentBody" class="content-body">
         <p class="placeholder">왼쪽에서 분류를 선택하거나 검색어를 입력하세요.</p>
       </div>
     </main>
+    <button id="sidebarTab" class="panel-tab panel-tab-right" title="조별목록 접기/펴기" aria-label="조별목록 접기/펴기" hidden>&#8250;</button>
     <aside id="detailSidebar" class="detail-sidebar"></aside>
     <div id="panelBackdrop" class="panel-backdrop"></div>
   </div>

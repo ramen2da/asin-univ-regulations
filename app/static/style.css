@@ -14,6 +14,10 @@
   --radius-sm: 5px;
   --shadow-sm: 0 1px 2px rgba(20, 40, 90, 0.06);
   --shadow-md: 0 4px 16px rgba(20, 40, 90, 0.08);
+  --tree-w: 290px;
+  --sidebar-w: 250px;
+  --layout-pad: 16px;
+  --panel-tab-w: 20px;
 }
 html, body {
   margin: 0;
@@ -53,28 +57,6 @@ header h1 {
 .header-logo {
   height: 46px;
   margin-left: auto;
-}
-.panel-toggle {
-  flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: #fff;
-  font-size: 16px;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-.panel-toggle:hover {
-  background: rgba(255, 255, 255, 0.26);
-}
-.panel-toggle[hidden] {
-  display: none;
 }
 .top-nav {
   display: flex;
@@ -143,15 +125,16 @@ header h1 {
 }
 
 .layout {
+  position: relative;
   display: flex;
   flex: 1;
   min-height: 0;
   overflow: hidden;
   gap: 16px;
-  padding: 16px;
+  padding: var(--layout-pad);
 }
 .tree {
-  width: 290px;
+  width: var(--tree-w);
   flex-shrink: 0;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -164,7 +147,7 @@ header h1 {
 }
 
 .detail-sidebar {
-  width: 250px;
+  width: var(--sidebar-w);
   flex-shrink: 0;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -178,12 +161,58 @@ header h1 {
   display: none;
 }
 
-/* Desktop: 헤더의 접기 버튼으로 왼쪽/오른쪽 패널을 완전히 접어 본문
-   폭을 넓힐 수 있게 함. Scoped to desktop widths only (matching the
-   mobile media query's own breakpoint) so a panel collapsed on desktop
-   doesn't carry stale width/padding/border overrides into the mobile
-   drawer's own rules if the window is resized across the breakpoint
-   without re-toggling. */
+/* 패널 가장자리에 붙어 방향 화살표로 여닫는 탭. 패널 자체의 자식이 아니라
+   .layout의 형제로 둬서, 패널이 폭 0으로 접히거나(데스크톱) 화면 밖으로
+   슬라이드되어도(모바일) 탭은 항상 그 자리에 남아 다시 열 수 있다. */
+.panel-tab {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--panel-tab-w);
+  height: 56px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--brand);
+  cursor: pointer;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 15px;
+  font-family: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: left 0.2s ease, right 0.2s ease, background 0.15s ease;
+}
+.panel-tab:hover {
+  background: var(--brand-tint);
+}
+.panel-tab[hidden] {
+  display: none;
+}
+.panel-tab-left {
+  left: calc(var(--layout-pad) + var(--tree-w));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  border-left: none;
+}
+.panel-tab-left.collapsed {
+  left: var(--layout-pad);
+}
+.panel-tab-right {
+  right: calc(var(--layout-pad) + var(--sidebar-w));
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  border-right: none;
+}
+.panel-tab-right.collapsed {
+  right: var(--layout-pad);
+}
+
+/* Desktop: 탭을 눌러 왼쪽/오른쪽 패널을 완전히 접어 본문 폭을 넓힐 수
+   있게 함. Scoped to desktop widths only (matching the mobile media
+   query's own breakpoint) so a panel collapsed on desktop doesn't carry
+   stale width/padding/border overrides into the mobile drawer's own
+   rules if the window is resized across the breakpoint without
+   re-toggling. */
 @media (min-width: 861px) {
   .tree.desktop-collapsed,
   .detail-sidebar.desktop-collapsed {
@@ -204,8 +233,12 @@ header h1 {
 
 /* 모바일: 폭이 좁으면 왼쪽/오른쪽 패널이 본문을 밀어내는 대신 화면 위로
    슬라이드되는 오버레이 서랍(drawer)으로 바뀌고, 기본값은 닫힌 상태라
-   본문이 전체 폭을 그대로 사용한다. */
+   본문이 전체 폭을 그대로 사용한다. 탭도 뷰포트 가장자리에 고정시켜,
+   패널이 화면 밖으로 나가 있어도 항상 눌러서 열 수 있게 한다. */
 @media (max-width: 860px) {
+  :root {
+    --mobile-panel-w: min(84vw, 300px);
+  }
   .layout {
     padding: 8px;
     gap: 0;
@@ -216,7 +249,7 @@ header h1 {
     top: 0;
     bottom: 0;
     z-index: 70;
-    width: min(84vw, 300px);
+    width: var(--mobile-panel-w);
     height: auto;
     border-radius: 0;
     box-shadow: var(--shadow-md);
@@ -233,6 +266,24 @@ header h1 {
   .tree.mobile-open,
   .detail-sidebar.mobile-open {
     transform: translateX(0);
+  }
+  .panel-tab {
+    position: fixed;
+    z-index: 71;
+  }
+  .panel-tab-left {
+    left: 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+  .panel-tab-left.mobile-open {
+    left: var(--mobile-panel-w);
+  }
+  .panel-tab-right {
+    right: 0;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  }
+  .panel-tab-right.mobile-open {
+    right: var(--mobile-panel-w);
   }
   .panel-backdrop.show {
     display: block;

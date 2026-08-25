@@ -307,12 +307,13 @@ function renderOutline(articles) {
 function renderSidebar(regId, articles, attachments) {
   if ((!articles || !articles.length) && (!attachments || !attachments.length)) {
     sidebarEl.innerHTML = "";
-    sidebarToggleBtn.hidden = true;
+    sidebarTab.hidden = true;
     sidebarEl.classList.remove("mobile-open");
     updatePanelBackdrop();
     return;
   }
-  sidebarToggleBtn.hidden = false;
+  sidebarTab.hidden = false;
+  updateSidebarTab();
 
   const outlineHtml = articles && articles.length
     ? `<div class="sidebar-section"><h3>조별목록</h3><ul>${renderOutline(articles)}</ul></div>`
@@ -351,7 +352,7 @@ async function goToArticle(regId, anchorId) {
 
 function clearSidebar() {
   sidebarEl.innerHTML = "";
-  sidebarToggleBtn.hidden = true;
+  sidebarTab.hidden = true;
   sidebarEl.classList.remove("mobile-open");
   updatePanelBackdrop();
 }
@@ -795,10 +796,12 @@ document.getElementById("homeLink").addEventListener("click", () => {
   loadRecent();
 });
 
-const treeToggleBtn = document.getElementById("treeToggleBtn");
-const sidebarToggleBtn = document.getElementById("sidebarToggleBtn");
+const treeTab = document.getElementById("treeTab");
+const sidebarTab = document.getElementById("sidebarTab");
 const panelBackdrop = document.getElementById("panelBackdrop");
 const MOBILE_LAYOUT_QUERY = "(max-width: 860px)";
+const TAB_OPEN_LEFT = "‹"; // ‹
+const TAB_OPEN_RIGHT = "›"; // ›
 
 function isMobileLayout() {
   return window.matchMedia(MOBILE_LAYOUT_QUERY).matches;
@@ -809,13 +812,36 @@ function updatePanelBackdrop() {
   panelBackdrop.classList.toggle("show", anyOpen);
 }
 
+// The tab lives outside the panel it controls (so it stays put and
+// clickable while the panel collapses to width 0 or slides off-screen),
+// which means its own position/glyph classes have to be kept in sync by
+// hand whenever the panel's open/closed state changes.
+function updateTreeTab() {
+  const mobile = isMobileLayout();
+  const open = mobile ? treeEl.classList.contains("mobile-open") : !treeEl.classList.contains("desktop-collapsed");
+  treeTab.classList.toggle("mobile-open", mobile && open);
+  treeTab.classList.toggle("collapsed", !mobile && !open);
+  treeTab.textContent = open ? TAB_OPEN_LEFT : TAB_OPEN_RIGHT;
+}
+function updateSidebarTab() {
+  const mobile = isMobileLayout();
+  const open = mobile
+    ? sidebarEl.classList.contains("mobile-open")
+    : !sidebarEl.classList.contains("desktop-collapsed");
+  sidebarTab.classList.toggle("mobile-open", mobile && open);
+  sidebarTab.classList.toggle("collapsed", !mobile && !open);
+  sidebarTab.textContent = open ? TAB_OPEN_RIGHT : TAB_OPEN_LEFT;
+}
+
 function closeMobilePanels() {
   treeEl.classList.remove("mobile-open");
   sidebarEl.classList.remove("mobile-open");
   updatePanelBackdrop();
+  updateTreeTab();
+  updateSidebarTab();
 }
 
-treeToggleBtn.addEventListener("click", () => {
+treeTab.addEventListener("click", () => {
   if (isMobileLayout()) {
     sidebarEl.classList.remove("mobile-open"); // only one drawer open at a time on mobile
     treeEl.classList.toggle("mobile-open");
@@ -823,8 +849,10 @@ treeToggleBtn.addEventListener("click", () => {
   } else {
     treeEl.classList.toggle("desktop-collapsed");
   }
+  updateTreeTab();
+  updateSidebarTab();
 });
-sidebarToggleBtn.addEventListener("click", () => {
+sidebarTab.addEventListener("click", () => {
   if (isMobileLayout()) {
     treeEl.classList.remove("mobile-open");
     sidebarEl.classList.toggle("mobile-open");
@@ -832,6 +860,8 @@ sidebarToggleBtn.addEventListener("click", () => {
   } else {
     sidebarEl.classList.toggle("desktop-collapsed");
   }
+  updateTreeTab();
+  updateSidebarTab();
 });
 panelBackdrop.addEventListener("click", closeMobilePanels);
 // Selecting anything in either drawer (a regulation, a 조 outline entry) is
@@ -843,6 +873,7 @@ treeEl.addEventListener("click", (e) => {
 sidebarEl.addEventListener("click", (e) => {
   if (isMobileLayout() && e.target.closest("a")) closeMobilePanels();
 });
+updateTreeTab();
 
 searchBtn.addEventListener("click", () => {
   closeMobilePanels();
