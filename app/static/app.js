@@ -307,8 +307,12 @@ function renderOutline(articles) {
 function renderSidebar(regId, articles, attachments) {
   if ((!articles || !articles.length) && (!attachments || !attachments.length)) {
     sidebarEl.innerHTML = "";
+    sidebarToggleBtn.hidden = true;
+    sidebarEl.classList.remove("mobile-open");
+    updatePanelBackdrop();
     return;
   }
+  sidebarToggleBtn.hidden = false;
 
   const outlineHtml = articles && articles.length
     ? `<div class="sidebar-section"><h3>조별목록</h3><ul>${renderOutline(articles)}</ul></div>`
@@ -347,6 +351,9 @@ async function goToArticle(regId, anchorId) {
 
 function clearSidebar() {
   sidebarEl.innerHTML = "";
+  sidebarToggleBtn.hidden = true;
+  sidebarEl.classList.remove("mobile-open");
+  updatePanelBackdrop();
 }
 
 function renderDocHeader(backText, breadcrumbInner, title) {
@@ -769,24 +776,83 @@ async function loadRevisionsList(page, filters) {
 
 document.getElementById("navForms").addEventListener("click", (e) => {
   e.preventDefault();
+  closeMobilePanels();
   loadAttachmentsList(1);
 });
 document.getElementById("navRecent").addEventListener("click", (e) => {
   e.preventDefault();
+  closeMobilePanels();
   loadRecent();
 });
 document.getElementById("navRevisions").addEventListener("click", (e) => {
   e.preventDefault();
+  closeMobilePanels();
   loadRevisionsList(1, { q: "", dateFrom: "", dateTo: "" });
 });
 document.getElementById("homeLink").addEventListener("click", () => {
+  closeMobilePanels();
   location.hash = "";
   loadRecent();
 });
 
-searchBtn.addEventListener("click", runSearch);
+const treeToggleBtn = document.getElementById("treeToggleBtn");
+const sidebarToggleBtn = document.getElementById("sidebarToggleBtn");
+const panelBackdrop = document.getElementById("panelBackdrop");
+const MOBILE_LAYOUT_QUERY = "(max-width: 860px)";
+
+function isMobileLayout() {
+  return window.matchMedia(MOBILE_LAYOUT_QUERY).matches;
+}
+
+function updatePanelBackdrop() {
+  const anyOpen = treeEl.classList.contains("mobile-open") || sidebarEl.classList.contains("mobile-open");
+  panelBackdrop.classList.toggle("show", anyOpen);
+}
+
+function closeMobilePanels() {
+  treeEl.classList.remove("mobile-open");
+  sidebarEl.classList.remove("mobile-open");
+  updatePanelBackdrop();
+}
+
+treeToggleBtn.addEventListener("click", () => {
+  if (isMobileLayout()) {
+    sidebarEl.classList.remove("mobile-open"); // only one drawer open at a time on mobile
+    treeEl.classList.toggle("mobile-open");
+    updatePanelBackdrop();
+  } else {
+    treeEl.classList.toggle("desktop-collapsed");
+  }
+});
+sidebarToggleBtn.addEventListener("click", () => {
+  if (isMobileLayout()) {
+    treeEl.classList.remove("mobile-open");
+    sidebarEl.classList.toggle("mobile-open");
+    updatePanelBackdrop();
+  } else {
+    sidebarEl.classList.toggle("desktop-collapsed");
+  }
+});
+panelBackdrop.addEventListener("click", closeMobilePanels);
+// Selecting anything in either drawer (a regulation, a 조 outline entry) is
+// done with the drawer's job finished - close it so the reader can see the
+// result instead of it staying open over the freshly-loaded content.
+treeEl.addEventListener("click", (e) => {
+  if (isMobileLayout() && e.target.closest("a")) closeMobilePanels();
+});
+sidebarEl.addEventListener("click", (e) => {
+  if (isMobileLayout() && e.target.closest("a")) closeMobilePanels();
+});
+
+searchBtn.addEventListener("click", () => {
+  closeMobilePanels();
+  runSearch();
+});
 searchInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") runSearch();
+  if (e.key === "Enter") {
+    closeMobilePanels();
+    runSearch();
+  }
 });
 
 function initFromHash() {
@@ -804,7 +870,10 @@ function initFromHash() {
   if (m) loadDetail(Number(m[1]));
 }
 
-window.addEventListener("hashchange", initFromHash);
+window.addEventListener("hashchange", () => {
+  closeMobilePanels();
+  initFromHash();
+});
 
 (async function init() {
   await loadTree();

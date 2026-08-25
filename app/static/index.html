@@ -11,6 +11,7 @@
 <body>
   <header>
     <div class="header-top">
+      <button id="treeToggleBtn" class="panel-toggle" title="분류 메뉴 접기/펴기" aria-label="분류 메뉴 접기/펴기">&#9776;</button>
       <h1 id="homeLink" title="홈으로 이동">아신대학교 규정정보시스템</h1>
       <nav class="top-nav">
         <a href="#" id="navRecent">최근 제·개정</a>
@@ -18,6 +19,7 @@
         <a href="#" id="navForms">서식 정보</a>
         <a href="admin.html">관리자</a>
       </nav>
+      <button id="sidebarToggleBtn" class="panel-toggle" title="조별목록 접기/펴기" aria-label="조별목록 접기/펴기" hidden>&#9776;</button>
       <img class="header-logo" src="img/acts-logo.png" alt="ACTS 아신대학교">
     </div>
     <div class="search-hero">
@@ -41,6 +43,7 @@
       </div>
     </main>
     <aside id="detailSidebar" class="detail-sidebar"></aside>
+    <div id="panelBackdrop" class="panel-backdrop"></div>
   </div>
 
   <script src="app.js"></script>

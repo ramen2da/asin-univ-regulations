@@ -54,6 +54,28 @@ header h1 {
   height: 46px;
   margin-left: auto;
 }
+.panel-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.panel-toggle:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+.panel-toggle[hidden] {
+  display: none;
+}
 .top-nav {
   display: flex;
   gap: 4px;
@@ -138,6 +160,7 @@ header h1 {
   padding: 14px 12px;
   height: 100%;
   overflow-y: auto;
+  transition: width 0.2s ease, padding 0.2s ease, border-width 0.2s ease;
 }
 
 .detail-sidebar {
@@ -149,9 +172,77 @@ header h1 {
   box-shadow: var(--shadow-sm);
   height: 100%;
   overflow-y: auto;
+  transition: width 0.2s ease, padding 0.2s ease, border-width 0.2s ease;
 }
 .detail-sidebar:empty {
   display: none;
+}
+
+/* Desktop: 헤더의 접기 버튼으로 왼쪽/오른쪽 패널을 완전히 접어 본문
+   폭을 넓힐 수 있게 함. Scoped to desktop widths only (matching the
+   mobile media query's own breakpoint) so a panel collapsed on desktop
+   doesn't carry stale width/padding/border overrides into the mobile
+   drawer's own rules if the window is resized across the breakpoint
+   without re-toggling. */
+@media (min-width: 861px) {
+  .tree.desktop-collapsed,
+  .detail-sidebar.desktop-collapsed {
+    width: 0;
+    padding: 0;
+    border-width: 0;
+    overflow: hidden;
+  }
+}
+
+.panel-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.35);
+  z-index: 65;
+}
+
+/* 모바일: 폭이 좁으면 왼쪽/오른쪽 패널이 본문을 밀어내는 대신 화면 위로
+   슬라이드되는 오버레이 서랍(drawer)으로 바뀌고, 기본값은 닫힌 상태라
+   본문이 전체 폭을 그대로 사용한다. */
+@media (max-width: 860px) {
+  .layout {
+    padding: 8px;
+    gap: 0;
+  }
+  .tree,
+  .detail-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 70;
+    width: min(84vw, 300px);
+    height: auto;
+    border-radius: 0;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.25s ease;
+  }
+  .tree {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  .detail-sidebar {
+    right: 0;
+    transform: translateX(100%);
+  }
+  .tree.mobile-open,
+  .detail-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  .panel-backdrop.show {
+    display: block;
+  }
+  .content-header {
+    padding: 16px 16px 0;
+  }
+  .content-body {
+    padding: 4px 16px 24px;
+  }
 }
 .sidebar-section {
   padding: 14px 16px;
