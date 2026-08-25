@@ -39,6 +39,9 @@ def _get_kiwi():
 
 ADDENDA_NEW_UNIT_RE = re.compile(
     r'^(<div class="article-table-wrap"'  # inline table - always its own line
+    r"|부칙$"  # separator between two historical amendments' addenda blocks
+               # (see parse_body in extract3.py - restored here as its own
+               # line since each block restarts its own ①②③ numbering)
     r"|[①-⑳]"  # 항 marker
     r"|\d+\.\s"  # nested 호 list marker (\"1. \", \"2. \" ...)
     r"|<별표|\[별표|<서식|\[서식"  # attachment/table caption headers
@@ -58,20 +61,22 @@ def merge_addenda_lines(lines):
     exists), but unlike article bodies, addenda were never rejoined into
     one flowing line before being rendered - each fragment ended up on its
     own <br>-separated row. Group fragments back into logical clauses,
-    splitting only where a genuinely new clause/caption/table starts."""
+    splitting only where a genuinely new clause/caption/table/부칙-block
+    starts."""
     units = []
     current = []
-    prev_was_table = False
+    prev_forces_new = False  # true right after a 부칙 separator or a table,
+                              # neither of which the next line should merge into
     for l in lines:
         s = l.strip()
         if not s:
             continue
-        starts_new = prev_was_table or bool(ADDENDA_NEW_UNIT_RE.match(s))
+        starts_new = prev_forces_new or bool(ADDENDA_NEW_UNIT_RE.match(s))
         if current and starts_new:
             units.append(" ".join(current))
             current = []
         current.append(s)
-        prev_was_table = "<table" in s
+        prev_forces_new = "<table" in s or s == "부칙"
     if current:
         units.append(" ".join(current))
     return units

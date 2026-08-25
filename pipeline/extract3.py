@@ -199,6 +199,18 @@ def parse_body(lines):
 
         if ADDENDA_RE.match(s):
             flush_article()
+            # The very first 부칙 marker is the section heading the caller
+            # already renders on its own (see the addenda-list UI) and
+            # isn't duplicated into the content. But some source documents
+            # (the standalone 학칙 PDF, unlike the compiled 규정집 main
+            # corpus) repeat a bare "부칙" line before every single
+            # historical amendment's clauses, each restarting its own
+            # ①②③ numbering - dropping those repeats made every amendment
+            # after the first look like it inexplicably started over at
+            # ①, so keep every occurrence after the first as its own
+            # addenda entry, acting as a visual separator between blocks.
+            if in_addenda:
+                addenda_lines.append((page_idx, '부칙'))
             in_addenda = True
             continue
 

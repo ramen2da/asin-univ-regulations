@@ -587,7 +587,7 @@ table.compare-table .compare-new {
 }
 .chapter-tag {
   display: inline-block;
-  font-size: 12px;
+  font-size: 1.15em;
   color: var(--brand);
   font-weight: 700;
   margin: 24px 0 10px;
@@ -653,6 +653,14 @@ table.inline-table tr:first-child td {
   border-top: 1px dashed var(--border-strong);
   font-size: 13.5px;
   color: var(--text-muted);
+}
+.addenda-sep {
+  display: inline-block;
+  color: var(--text);
+  margin-top: 14px;
+}
+.addenda-sep:first-child {
+  margin-top: 0;
 }
 .attachment-file {
   margin-top: 16px;

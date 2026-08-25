@@ -464,7 +464,9 @@ async function loadDetail(id) {
     : "";
 
   const addendaHtml = r.addenda.length
-    ? `<div class="addenda"><strong>부칙</strong><br>${r.addenda.join("<br>")}</div>`
+    ? `<div class="addenda"><strong class="addenda-sep">부칙</strong><br>${r.addenda
+        .map((line) => (line === "부칙" ? `<strong class="addenda-sep">부칙</strong>` : line))
+        .join("<br>")}</div>`
     : "";
 
   const breadcrumbInner = `홈 <span class="sep">&rsaquo;</span> ${[r.category_l0, r.category_l1].filter(Boolean).join(' <span class="sep">&rsaquo;</span> ')} <span class="sep">&rsaquo;</span> ${r.title}`;
