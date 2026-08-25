@@ -7,7 +7,7 @@ const searchInput = document.getElementById("searchInput");
 const searchScope = document.getElementById("searchScope");
 const searchBtn = document.getElementById("searchBtn");
 
-let docFontSize = 15;
+let docFontSize = 16;
 let lastListView = null;
 
 function setContent(headerHtml, bodyHtml) {
@@ -766,6 +766,10 @@ document.getElementById("navRecent").addEventListener("click", (e) => {
 document.getElementById("navRevisions").addEventListener("click", (e) => {
   e.preventDefault();
   loadRevisionsList(1, { q: "", dateFrom: "", dateTo: "" });
+});
+document.getElementById("homeLink").addEventListener("click", () => {
+  location.hash = "";
+  loadRecent();
 });
 
 searchBtn.addEventListener("click", runSearch);

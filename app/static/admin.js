@@ -151,6 +151,41 @@ async function selectRegulation(id) {
   emptyHint.style.display = "flex";
 }
 
+function articleBodyToDisplay(text) {
+  const stash = [];
+  const masked = (text || "").replace(/([([][^()[\]]*[)\]])/g, (m) => {
+    stash.push(m);
+    return `@@${stash.length - 1}@@`;
+  });
+
+  const markerRe = /[①-⑳](?![,"'"])|(?<=\s)[1-9][0-9]?\.(?=\s)/g;
+  let lastIndex = 0;
+  let seenCircled = false;
+  let out = "";
+  let m;
+  while ((m = markerRe.exec(masked)) !== null) {
+    out += masked.slice(lastIndex, m.index);
+    const marker = m[0];
+    const isCircled = /[①-⑳]/.test(marker);
+    out += (!isCircled && seenCircled) ? `\n  ${marker}` : `\n${marker}`;
+    if (isCircled) seenCircled = true;
+    lastIndex = markerRe.lastIndex;
+  }
+  out += masked.slice(lastIndex);
+  out = out.replace(/^\n/, "");
+  return out.replace(/@@(\d+)@@/g, (mm, i) => stash[Number(i)]);
+}
+
+function articleBodyToStorage(text) {
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function selectArticle(articleId) {
   currentArticleId = articleId;
   const article = currentArticles.find((a) => a.id === articleId);
@@ -164,8 +199,8 @@ function selectArticle(articleId) {
   });
 
   editArticleHead.textContent = `${articleLabel(article)}${article.title ? `(${article.title})` : ""}`;
-  editBody.value = article.body;
-  editBody.dataset.original = article.body;
+  editBody.value = articleBodyToDisplay(article.body);
+  editBody.dataset.original = editBody.value;
   editBody.classList.remove("changed");
   revisedAt.value = todayLocalISODate();
   revisedSummary.value = "";
@@ -185,13 +220,14 @@ saveBtn.addEventListener("click", async () => {
   }
 
   try {
+    const storageBody = articleBodyToStorage(editBody.value);
     const result = await api(`/api/admin/regulations/${currentRegId}/save`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         revised_at: revisedAt.value,
         summary: revisedSummary.value || null,
-        articles: [{ id: currentArticleId, body: editBody.value }],
+        articles: [{ id: currentArticleId, body: storageBody }],
       }),
     });
     saveResult.style.color = "#1a7a3c";
@@ -202,7 +238,8 @@ saveBtn.addEventListener("click", async () => {
 
     if (result.changed > 0) {
       const article = currentArticles.find((a) => a.id === currentArticleId);
-      if (article) article.body = editBody.value;
+      if (article) article.body = storageBody;
+      editBody.value = articleBodyToDisplay(storageBody);
       editBody.dataset.original = editBody.value;
       editBody.classList.remove("changed");
       const li = articleOutline.querySelector(`li[data-id="${currentArticleId}"]`);

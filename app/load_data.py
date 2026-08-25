@@ -14,6 +14,7 @@ JSON_PATH = Path(__file__).resolve().parent.parent / "pipeline" / "output" / "re
 TITLE_OVERRIDES = {
     110: "세계지역연구소 운영규정",
     42: "강사임용 등에 관한 규정",
+    1: "정관",
 }
 
 

@@ -32,21 +32,30 @@ header {
   flex-shrink: 0;
   background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
   color: #fff;
-  padding: 14px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
   box-shadow: 0 2px 10px rgba(10, 30, 70, 0.18);
   position: relative;
   z-index: 2;
+}
+.header-top {
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 header h1 {
   font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0;
+  cursor: pointer;
+}
+.header-logo {
+  height: 30px;
+  margin-left: auto;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
 }
 .top-nav {
   display: flex;
@@ -68,19 +77,27 @@ header h1 {
   text-decoration: none;
 }
 
+.search-hero {
+  display: flex;
+  justify-content: center;
+  padding: 6px 28px 26px;
+}
 .search-bar {
   display: flex;
   align-items: center;
   gap: 2px;
   background: rgba(255, 255, 255, 0.16);
-  padding: 4px;
+  padding: 5px;
   border-radius: 999px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: var(--shadow-md);
 }
 .search-bar select, .search-bar input, .search-bar button {
-  padding: 7px 14px;
+  padding: 10px 16px;
   border: none;
   border-radius: 999px;
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-family: inherit;
 }
 .search-bar select, .search-bar input {
@@ -88,7 +105,8 @@ header h1 {
   color: var(--text);
 }
 .search-bar input {
-  width: 220px;
+  flex: 1;
+  min-width: 0;
 }
 .search-bar input:focus, .search-bar select:focus {
   outline: none;
@@ -245,7 +263,7 @@ header h1 {
   color: var(--text);
   text-decoration: none;
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.45;
   transition: background 0.12s ease, color 0.12s ease;
 }
@@ -323,7 +341,7 @@ table.reg-list th, table.reg-list td {
   padding: 11px 14px;
   border-bottom: 1px solid var(--border);
   text-align: left;
-  font-size: 13.5px;
+  font-size: 14px;
 }
 table.reg-list th {
   background: var(--bg);
@@ -569,7 +587,6 @@ table.compare-table .compare-new {
   margin-bottom: 18px;
   scroll-margin-top: 16px;
   line-height: 1.75;
-  font-size: 14.5px;
 }
 .chapter-tag {
   display: inline-block;
