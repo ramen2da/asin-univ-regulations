@@ -272,7 +272,7 @@ function renderArticles(articles) {
     }
     const artNo = a.sub_no ? `제${a.no}조의${a.sub_no}` : `제${a.no}조`;
     const anchorId = a.sub_no ? `article-${a.no}-${a.sub_no}` : `article-${a.no}`;
-    html += `<p class="article" id="${anchorId}"><span class="art-no">${artNo}${a.title ? `(${a.title})` : ""}</span>${highlightAmendments(formatArticleBody(stripArticleHead(a.body, a.no, a.sub_no)))}</p>`;
+    html += `<div class="article" id="${anchorId}"><span class="art-no">${artNo}${a.title ? `(${a.title})` : ""}</span>${highlightAmendments(formatArticleBody(stripArticleHead(a.body, a.no, a.sub_no)))}</div>`;
   });
 
   return html;
@@ -394,11 +394,16 @@ function formatArticleBody(text) {
   // Dates and amendment notes like "(개정 2011. 9. 23)" can also contain a
   // "N. " pattern, so parenthetical/bracketed spans are protected first and
   // restored at the end, to avoid mistaking a date fragment for a list marker.
+  // Inline tables (embedded in some article bodies in place of a formal
+  // [별표]) are stashed the same way first, so numbered table cells like
+  // "1. 신학과" never get mistaken for a list marker either.
   const stash = [];
-  let masked = text.replace(/([([][^()[\]]*[)\]])/g, (m) => {
-    stash.push(m);
+  const stashText = (s) => {
+    stash.push(s);
     return `@@${stash.length - 1}@@`;
-  });
+  };
+  let masked = text.replace(/<table\b[\s\S]*?<\/table>/g, stashText);
+  masked = masked.replace(/([([][^()[\]]*[)\]])/g, stashText);
 
   const markerRe = /[①-⑳](?![,”"'])|(?<=\s)[1-9][0-9]?\.(?=\s)/g;
   let lastIndex = 0;

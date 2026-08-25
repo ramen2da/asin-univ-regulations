@@ -500,7 +500,7 @@
       "no": "42",
       "sub_no": null,
       "title": "성적 분류",
-      "body": "제42조(성적 분류) ①학업 성적은 과목별로 종합 평가하며, 학생 성적 등급의 분포는 다음과 같이 분류한다 (개정2016.03.02., 2018.05.15.). ㉮2015 학번까지 적용 ㉯2016 학번부터 적용 [표 - 별표 참조] ②과목의 학점은 D0 등급 이상을 급제로 하고 F 등급은 낙제로 한다. ③학점 불계의 경우 급제는 P로, 낙제는 NP로 표시한다."
+      "body": "제42조(성적 분류) ①학업 성적은 과목별로 종합 평가하며, 학생 성적 등급의 분포는 다음과 같이 분류한다 (개정2016.03.02., 2018.05.15.). ㉮2015 학번까지 적용 <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>등 급</td><td>평 점</td><td>점 수</td></tr><tr><td>A+<br>A0<br>A-<br>B+<br>B0<br>B-<br>C+<br>C0<br>C-<br>D+<br>D0<br>F</td><td>4.3<br>4.0<br>3.7<br>3.3<br>3.0<br>2.7<br>2.3<br>2.0<br>1.7<br>1.3<br>1.0<br>0.0</td><td>97 - 100<br>94 - 96<br>90 - 93<br>87 - 89<br>84 - 86<br>80 - 83<br>77 - 79<br>74 - 76<br>70 - 73<br>67 - 69<br>60 - 66<br>0 - 59</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p11.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div> ㉯2016 학번부터 적용 <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>등 급</td><td>평 점</td><td>점 수</td><td>구간별<br>대표점수</td></tr><tr><td>A+<br>A0<br>A-<br>B+<br>B0<br>B-<br>C+<br>C0<br>C-<br>D+<br>D0<br>F</td><td>4.5<br>4.3<br>4.0<br>3.7<br>3.3<br>3.0<br>2.7<br>2.3<br>2.0<br>1.7<br>1.3<br>0.0</td><td>97 - 100<br>94 - 96<br>90 - 93<br>87 - 89<br>84 - 86<br>80 - 83<br>77 - 79<br>74 - 76<br>70 - 73<br>67 - 69<br>60 - 66<br>0 - 59</td><td>99<br>96<br>93<br>89<br>86<br>83<br>79<br>76<br>73<br>69<br>66<br>0</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p11.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div> ②과목의 학점은 D0 등급 이상을 급제로 하고 F 등급은 낙제로 한다. ③학점 불계의 경우 급제는 P로, 낙제는 NP로 표시한다."
     },
     {
       "chapter": "제8장 교과이수, 등록및수강신청, 시험과성적, 졸업",
@@ -581,7 +581,7 @@
       "no": "50",
       "sub_no": null,
       "title": "졸업 학점",
-      "body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) [표 - 별표 참조] 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.,2026.04.30.) 3. (삭제2015.02.10.)"
+      "body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과(부)</td><td></td><td>본 전공<br>이수</td><td>연계전공<br>이수</td><td>복수전공<br>이수</td><td>부전공<br>이수</td><td>교양<br>학점</td></tr><tr><td>2004～2014<br>학년도<br>입학자</td><td>전체학과</td><td></td><td>45</td><td>-</td><td>35</td><td>21</td><td>42</td></tr><tr><td>2015학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td>2016학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2017학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2018～2020<br>학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선<br>교<br>영<br>어<br>학<br>과</td><td>TESOL전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td></td><td>선교영어전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>33</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2021∼2023<br>학년도<br>입학자</td><td>전체학부</td><td></td><td>27</td><td>-</td><td>27</td><td>-</td><td>42</td></tr><tr><td>2024학년도<br>입학자부터</td><td>전체학부</td><td></td><td>51</td><td>-</td><td>36</td><td>21</td><td>42</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p13.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div> 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.,2026.04.30.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상학부</td><td>제1전공/부전공 이수시</td><td></td><td>제1/2전공 이수시</td><td></td></tr><tr><td></td><td></td><td>제1전공</td><td>부전공</td><td>제1전공</td><td>제2전공</td></tr><tr><td>2023학년도<br>2025학년도 까지</td><td>모든학부</td><td>27</td><td>18</td><td>27</td><td>27</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p14.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div> 3. (삭제2015.02.10.)"
     },
     {
       "chapter": "제8장 교과이수, 등록및수강신청, 시험과성적, 졸업",
@@ -617,7 +617,7 @@
       "no": "54",
       "sub_no": null,
       "title": "조기 졸업",
-      "body": "제54조(조기 졸업) ①계절 학기 수업 및 성적으로 인한 학점 초과 및 기타 방법으로 인하여 소정의 교육 과정을 이수하고 학칙 제5조2 항과 제52조의졸업 요건을 충족한 자는 [표 - 별표 참조] 조기 졸업할 수 있다. ②조기 졸업을 희망하는 자는 6 학기 말 또는 7 학기 말에“조기 졸업 신청서”를 제출하여야한다. (개정2011.05.27.)"
+      "body": "제54조(조기 졸업) ①계절 학기 수업 및 성적으로 인한 학점 초과 및 기타 방법으로 인하여 소정의 교육 과정을 이수하고 학칙 제5조2 항과 제52조의졸업 요건을 충족한 자는 <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상학과</td><td>본 전공 이수</td></tr><tr><td>2026학년도 입학자</td><td>모든학과</td><td>35</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p14.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div> 조기 졸업할 수 있다. ②조기 졸업을 희망하는 자는 6 학기 말 또는 7 학기 말에“조기 졸업 신청서”를 제출하여야한다. (개정2011.05.27.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과</td><td>본 전공만 이수</td></tr><tr><td>～ 2014학년도 입학자</td><td>전체학과</td><td>35</td></tr><tr><td>2015～2022학년도<br>입학자</td><td>신학과</td><td>40</td></tr><tr><td></td><td>선교문화복지학과</td><td>40</td></tr><tr><td></td><td>기독교교육상담학과</td><td>40</td></tr><tr><td></td><td>선교영어학과</td><td>45</td></tr><tr><td></td><td>선교중국어학과</td><td>45</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p14.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>"
     },
     {
       "chapter": "제8장 교과이수, 등록및수강신청, 시험과성적, 졸업",
@@ -662,7 +662,7 @@
       "no": "55",
       "sub_no": "4",
       "title": "학위의 종류",
-      "body": "제55조의4(학위의 종류) ①제55조의2 학점 인정에 따른 학위 수여 가능한 학위의 종류 및 전 공은 다음 각 호와 같다. 1. 본교 정규 학과 교육 과정 중 학점은행제 표준 교육 과정과 동일하거나 유사한 전공에 한한다. 2. 전공 명이 유사할 경우 유사 전공 심의 위원회를 설치하여 유사성 심의를 하여야하며 유사 전공 심의 위원회의 운영에 관한 규정을 별도로 정한다. ②학점 인정에 따른 총장에 의한 학위 종별 표는 아래에 따른다. (조신 설2018.12.14.) [표 - 별표 참조]"
+      "body": "제55조의4(학위의 종류) ①제55조의2 학점 인정에 따른 학위 수여 가능한 학위의 종류 및 전 공은 다음 각 호와 같다. 1. 본교 정규 학과 교육 과정 중 학점은행제 표준 교육 과정과 동일하거나 유사한 전공에 한한다. 2. 전공 명이 유사할 경우 유사 전공 심의 위원회를 설치하여 유사성 심의를 하여야하며 유사 전공 심의 위원회의 운영에 관한 규정을 별도로 정한다. ②학점 인정에 따른 총장에 의한 학위 종별 표는 아래에 따른다. (조신 설2018.12.14.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학위명</td><td>전공명</td></tr><tr><td>신학사</td><td>신학전공</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p16.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>"
     },
     {
       "chapter": "제8장 교과이수, 등록및수강신청, 시험과성적, 졸업",
@@ -1148,11 +1148,14 @@
     "<별표 1> 연도별 모집 학과 및 입학 정원(개정2014.02.20., 2014.08.25., 2017.02.01., 2018.12.14.,",
     "2019.10.07., 2020.03.26., 2021.04.23., 2022.04.28.2023.04.04., 2024.12.19.)",
     "(학 과제～2020년까지)",
-    "[표 - 별표 참조]",
+    "<div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학년도<br>학 과</td><td></td><td>2015</td><td>2016</td><td>2017</td><td>2018</td><td>2019</td><td>2020</td></tr><tr><td>주<br>간</td><td>신 학 과</td><td>70</td><td>70</td><td>66</td><td>60</td><td>60</td><td>60</td></tr><tr><td></td><td>아세아학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>선교학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>선교문화복지학과</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td><td>30</td></tr><tr><td></td><td>아세아선교학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>선교언어학부<br>선교영어전공</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>선교영어학과</td><td>30</td><td>30</td><td>30</td><td>33</td><td>33</td><td>33</td></tr><tr><td></td><td>기독교교육학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>기독교교육상담학과</td><td>40</td><td>40</td><td>40</td><td>40</td><td>40</td><td>40</td></tr><tr><td></td><td>선교중국어학과</td><td>20</td><td>20</td><td>20</td><td>23</td><td>23</td><td>23</td></tr><tr><td>야<br>간</td><td>신 학 과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>선교학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>아세아선교학과</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>합계</td><td></td><td>190</td><td>190</td><td>186</td><td>186</td><td>186</td><td>186</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p28.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>",
     "(학부제 2021년) (학부제 2022~2023년)",
-    "[표 - 별표 참조]",
+    "<div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학년도<br>학 부</td><td></td><td>2021</td></tr><tr><td>글로벌<br>미션신학부</td><td>신학</td><td>56</td></tr><tr><td></td><td>선교학</td><td></td></tr><tr><td>글로벌<br>융합리더학부</td><td>기독교교육과미디어</td><td>104</td></tr><tr><td></td><td>청소년상담지도</td><td></td></tr><tr><td></td><td>사회복지</td><td></td></tr><tr><td></td><td>영어</td><td></td></tr><tr><td></td><td>중국어</td><td></td></tr><tr><td>합계</td><td></td><td>160</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p29.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>",
+    "<div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학년도<br>학 부</td><td></td><td>2022</td><td>2023</td></tr><tr><td>신학부</td><td>신학 전공</td><td>50</td><td>40</td></tr><tr><td>국제개발협력학부</td><td>국제개발협력 전공</td><td>40</td><td>30</td></tr><tr><td></td><td>글로벌영어 전공</td><td></td><td></td></tr><tr><td></td><td>중국어 전공</td><td></td><td></td></tr><tr><td>교육미디어<br>커뮤니케이션학부</td><td>기독교교육(ACSI) 전공</td><td>30</td><td>30</td></tr><tr><td></td><td>미디어콘텐츠개발 전공</td><td></td><td></td></tr><tr><td>상담복지학부</td><td>사회복지 전공</td><td>40</td><td>30</td></tr><tr><td></td><td>청소년상담지도 전공</td><td></td><td></td></tr><tr><td>합계</td><td></td><td>160</td><td>130</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p29.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>",
     "(학 과제 2024년부터)",
+    "<div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학년도<br>학 과</td><td></td><td>2024</td><td>2025부터</td><td>비고</td></tr><tr><td>주<br>간</td><td>신 학 과</td><td>40</td><td>40</td><td></td></tr><tr><td></td><td>기독교교육과 미디어학과</td><td>30</td><td>30</td><td></td></tr><tr><td></td><td>기독교상담학과</td><td>30</td><td>30</td><td></td></tr><tr><td></td><td>사회복지선교학과</td><td>30</td><td>30</td><td></td></tr><tr><td></td><td>종교문화콘텐츠학과</td><td>-</td><td>정원외</td><td>정원외 전담학과</td></tr><tr><td>합계</td><td></td><td>130</td><td>130</td><td></td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p29.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>",
     "<별표 2> 학과별 학위 (개정 2014.02.20., 2022.09.23.)",
+    "<div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>학 과 명</td><td>수 여 학 위</td></tr><tr><td>신학과<br>신학전공</td><td>신학사(B.Th.)</td></tr><tr><td>아세아학과<br>선교학과<br>아세아선교학과<br>선교언어학부<br>기독교교육학과<br>선교영어학과<br>선교중국어학과<br>선교문화복지학과<br>기독교교육상담학과<br>선교학전공<br>기독교교육과미디어전공<br>청소년상담지도전공</td><td>문학사(B.A.)</td></tr></tbody></table><a class=\"table-src-link\" href=\"/forms/hakchik_inbody_p29.pdf\" target=\"_blank\">원본 페이지 보기 (PDF)</a></div>",
     "사회 복지 전공",
     "영어 전공",
     "중국어 전공",
@@ -1161,50 +1164,7 @@
     "기독교 교육(ACSI)전공",
     "미디어 컨텐츠 개발 전공"
   ],
-  "attachments": [
-    {
-      "label": "[별표] p.11 (학점배당표/정원표 등)",
-      "start_page": 11,
-      "end_page": 11,
-      "lines": [],
-      "file_url": "/forms/reg120_att0.pdf"
-    },
-    {
-      "label": "[별표] p.13 (학점배당표/정원표 등)",
-      "start_page": 13,
-      "end_page": 13,
-      "lines": [],
-      "file_url": "/forms/reg120_att1.pdf"
-    },
-    {
-      "label": "[별표] p.14 (학점배당표/정원표 등)",
-      "start_page": 14,
-      "end_page": 14,
-      "lines": [],
-      "file_url": "/forms/reg120_att2.pdf"
-    },
-    {
-      "label": "[별표] p.16 (학점배당표/정원표 등)",
-      "start_page": 16,
-      "end_page": 16,
-      "lines": [],
-      "file_url": "/forms/reg120_att3.pdf"
-    },
-    {
-      "label": "[별표] p.28 (학점배당표/정원표 등)",
-      "start_page": 28,
-      "end_page": 28,
-      "lines": [],
-      "file_url": "/forms/reg120_att4.pdf"
-    },
-    {
-      "label": "[별표] p.29 (학점배당표/정원표 등)",
-      "start_page": 29,
-      "end_page": 29,
-      "lines": [],
-      "file_url": "/forms/reg120_att5.pdf"
-    }
-  ],
+  "attachments": [],
   "pdf_pages": [
     1,
     2,
