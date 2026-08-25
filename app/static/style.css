@@ -51,11 +51,8 @@ header h1 {
   cursor: pointer;
 }
 .header-logo {
-  height: 30px;
+  height: 46px;
   margin-left: auto;
-  background: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
 }
 .top-nav {
   display: flex;

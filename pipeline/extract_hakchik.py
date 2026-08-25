@@ -8,10 +8,10 @@ from kiwipiepy import Kiwi
 
 sys.path.insert(0, os.path.dirname(__file__))
 from extract3 import parse_body, normalize_ws
-from table_extract_common import find_table_bboxes, prose_lines_excluding_tables, extract_page_range_as_pdf
+from table_extract_common import prose_lines_excluding_tables, extract_page_range_as_pdf
 
-PDF_PATH = os.path.join(os.path.dirname(__file__), "..", "학칙_260623개정(재입학개정 반영).pdf")
 FORMS_DIR = os.path.join(os.path.dirname(__file__), "..", "app", "static", "forms")
+CURRENT_PDF_PATH = os.path.join(os.path.dirname(__file__), "..", "학칙_260623개정(재입학개정 반영).pdf")
 
 CHAPTER_START_RE = re.compile(r"^제\s*(\d+)\s*장\s*$")
 CHAPTER_INLINE_RE = re.compile(r"^제\s*(\d+)\s*장\s+(.+)$")
@@ -19,11 +19,33 @@ SECTION_START_RE = re.compile(r"^제\s*(\d+)\s*절\s*$")
 ARTICLE_RE = re.compile(r"^제\s*(\d+)\s*조(?:의\s*(\d+))?\s*(?:\(([^)]*)\))?")
 ADDENDA_SOLO_RE = re.compile(r"^부$")
 ADDENDA_SOLO2_RE = re.compile(r"^칙$")
+DATE_LINE_RE = re.compile(r"^(제정|개정)\s*([\d.]+)\.?$")
+TIGHTEN_RE = re.compile(r"(제\s*\d+)\s*(조|장|절|관|항|호)(\s*의)?\s*(\d+)?")
 
-# 1-indexed page numbers where find_tables() found a real table embedded in
-# the running text (credit-hour / quota reference tables with no formal
-# <별표>/[별표] marker of their own).
-TABLE_PAGES = [11, 13, 14, 16, 28, 29]
+_kiwi = None
+
+
+def _get_kiwi():
+    global _kiwi
+    if _kiwi is None:
+        _kiwi = Kiwi()
+    return _kiwi
+
+
+def _tighten(m):
+    out = m.group(1).replace(" ", "") + m.group(2)
+    if m.group(3):
+        out += "의"
+    if m.group(4):
+        out += m.group(4)
+    return out
+
+
+def fix_spacing_ko(text):
+    if not text:
+        return text
+    spaced = _get_kiwi().space(text)
+    return TIGHTEN_RE.sub(_tighten, spaced)
 
 
 def is_structural(line):
@@ -86,27 +108,47 @@ def merge_fragmented_headers(lines):
     return out
 
 
-def main():
-    os.makedirs(FORMS_DIR, exist_ok=True)
-    doc = fitz.open(PDF_PATH)
+def extract_hakchik_pdf(pdf_path, seq=120, extract_attachments=False, forms_prefix="reg120_att"):
+    """Parses a standalone 아신대학교 학칙 PDF edition into the same record
+    shape as the main corpus. Table pages are auto-detected per edition
+    (page numbers shift between editions as content is added/removed)."""
+    doc = fitz.open(pdf_path)
 
-    page_bboxes = {p: find_table_bboxes(doc[p - 1]) for p in TABLE_PAGES}
+    table_pages = []
+    for i in range(len(doc)):
+        # min_rows=1: this document's large credit-hour tables often split
+        # into a 1-row header fragment plus a multi-row data block (the
+        # header alone would otherwise fail the row>=2 check and leak
+        # through as ungridded prose, corrupting whatever article follows).
+        # But a loose 1-row/2-col threshold also catches this document's
+        # letter-spaced chapter headings (each character centered as its own
+        # "column") as false positives - a real 1-row data-table fragment
+        # always has at least one numeric cell, a heading fragment never
+        # does, so use that to tell them apart.
+        page_i = doc[i]
+        candidate_tables = page_i.find_tables()
+        bboxes = []
+        for t in candidate_tables.tables:
+            if t.row_count >= 2 and t.col_count >= 2:
+                bboxes.append(t.bbox)
+            elif t.row_count == 1 and t.col_count >= 2:
+                cells = t.extract()
+                has_digit = any(c and re.search(r"\d", c) for row in cells for c in row)
+                if has_digit:
+                    bboxes.append(t.bbox)
+        if bboxes:
+            table_pages.append((i + 1, bboxes))
 
     raw_lines = []
     for i in range(len(doc)):
         page_no = i + 1
-        if page_no in page_bboxes and page_bboxes[page_no]:
-            lines = prose_lines_excluding_tables(doc[i], page_bboxes[page_no])
+        bboxes = next((b for p, b in table_pages if p == page_no), None)
+        if bboxes:
+            lines = prose_lines_excluding_tables(doc[i], bboxes)
         else:
             lines = doc[i].get_text().split("\n")
         raw_lines.extend(lines)
 
-    # The full 제정/개정 date history is printed as a standalone list of
-    # "개정YYYY.MM.DD." lines injected mid-flow (right after the first
-    # article, not as clean front matter like the main corpus) - pull every
-    # such line out wherever it appears, in document order, and strip it from
-    # the body text entirely.
-    DATE_LINE_RE = re.compile(r"^(제정|개정)\s*([\d.]+)\.?$")
     amend_dates = []
     enact_date = None
     remaining_lines = []
@@ -123,59 +165,41 @@ def main():
 
     merged = merge_fragmented_headers(remaining_lines)
 
-    # split off the title line before the first real structural line
     body_start = next(k for k, l in enumerate(merged) if is_structural(l.strip()))
     front = merged[:body_start]
     body_lines_plain = merged[body_start:]
 
     title = normalize_ws("".join(l.strip() for l in front if l.strip()))
 
-    # parse_body needs (page_idx, line) tuples; page tracking isn't critical
-    # here since we extract attachments separately by known page number.
     body_lines = [(0, l) for l in body_lines_plain]
-    articles, addenda, _unused_attachments = parse_body(body_lines)
-
-    kiwi = Kiwi()
-    TIGHTEN_RE = re.compile(r"(제\s*\d+)\s*(조|장|절|관|항|호)(\s*의)?\s*(\d+)?")
-
-    def tighten(m):
-        out = m.group(1).replace(" ", "") + m.group(2)
-        if m.group(3):
-            out += "의"
-        if m.group(4):
-            out += m.group(4)
-        return out
-
-    def fix(text):
-        if not text:
-            return text
-        spaced = kiwi.space(text)
-        return TIGHTEN_RE.sub(tighten, spaced)
+    articles, addenda, _unused = parse_body(body_lines)
 
     for a in articles:
-        a["body"] = fix(a["body"])
+        a["body"] = fix_spacing_ko(a["body"])
         if a.get("title"):
-            a["title"] = fix(a["title"])
-    addenda = [fix(l) for l in addenda]
+            a["title"] = fix_spacing_ko(a["title"])
+    addenda = [fix_spacing_ko(l) for l in addenda]
 
-    # attachments: extract each table page as a standalone PDF
     attachments = []
-    for idx, page_no in enumerate(TABLE_PAGES):
-        fname = f"reg120_att{idx}.pdf"
-        out_path = os.path.join(FORMS_DIR, fname)
-        extract_page_range_as_pdf(PDF_PATH, page_no, page_no, out_path)
-        attachments.append({
-            "label": f"[별표] p.{page_no} (학점배당표/정원표 등)",
-            "start_page": page_no,
-            "end_page": page_no,
-            "lines": [],
-            "file_url": f"/forms/{fname}",
-        })
+    if extract_attachments:
+        os.makedirs(FORMS_DIR, exist_ok=True)
+        for idx, (page_no, _bboxes) in enumerate(table_pages):
+            fname = f"{forms_prefix}{idx}.pdf"
+            out_path = os.path.join(FORMS_DIR, fname)
+            extract_page_range_as_pdf(pdf_path, page_no, page_no, out_path)
+            attachments.append({
+                "label": f"[별표] p.{page_no} (학점배당표/정원표 등)",
+                "start_page": page_no,
+                "end_page": page_no,
+                "lines": [],
+                "file_url": f"/forms/{fname}",
+            })
 
+    n_pages = len(doc)
     doc.close()
 
-    record = {
-        "seq": 120,
+    return {
+        "seq": seq,
         "l0": "학사",
         "l1": None,
         "index_no": "1",
@@ -187,16 +211,22 @@ def main():
         "articles": articles,
         "addenda": addenda,
         "attachments": attachments,
-        "pdf_pages": list(range(1, len(fitz.open(PDF_PATH)) + 1)),
+        "pdf_pages": list(range(1, n_pages + 1)),
+        "table_pages": [p for p, _ in table_pages],
     }
+
+
+def main():
+    record = extract_hakchik_pdf(CURRENT_PDF_PATH, seq=120, extract_attachments=True)
 
     out_path = os.path.join(os.path.dirname(__file__), "output", "hakchik.json")
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(record, f, ensure_ascii=False, indent=2)
 
-    print(f"parsed {len(articles)} articles, {len(addenda)} addenda lines, {len(attachments)} attachments", file=sys.stderr)
-    print(f"title: {title}", file=sys.stderr)
-    print(f"enact_date: {enact_date}, amend_dates count: {len(amend_dates)}", file=sys.stderr)
+    print(f"parsed {len(record['articles'])} articles, {len(record['addenda'])} addenda lines, "
+          f"{len(record['attachments'])} attachments", file=sys.stderr)
+    print(f"title: {record['parsed_title']}", file=sys.stderr)
+    print(f"enact_date: {record['enact_date']}, amend_dates count: {len(record['amend_dates'])}", file=sys.stderr)
 
 
 if __name__ == "__main__":

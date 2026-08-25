@@ -58,9 +58,14 @@ function renderTreeNode(node) {
     label.className = "label cat-link";
     label.innerHTML = `${ICON_FOLDER}<span>${node.name}</span>`;
     label.addEventListener("click", () => {
-      li.classList.remove("collapsed");
-      arrow.textContent = "▾";
-      loadListByCategory(node.name, node.parentL0);
+      if (li.classList.contains("collapsed")) {
+        li.classList.remove("collapsed");
+        arrow.textContent = "▾";
+        loadListByCategory(node.name, node.parentL0);
+      } else {
+        li.classList.add("collapsed");
+        arrow.textContent = "▸";
+      }
     });
     header.appendChild(label);
 

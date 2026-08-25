@@ -14,7 +14,10 @@ JSON_PATH = Path(__file__).resolve().parent.parent / "pipeline" / "output" / "re
 TITLE_OVERRIDES = {
     110: "세계지역연구소 운영규정",
     42: "강사임용 등에 관한 규정",
-    1: "정관",
+}
+
+CATEGORY_L0_OVERRIDES = {
+    "학교법인 아세아연합신학대학원 정관 및 시행세칙": "정관",
 }
 
 
@@ -38,13 +41,14 @@ def load():
         pages_str = f"{pages[0]}-{pages[-1]}" if pages else None
 
         title = TITLE_OVERRIDES.get(r["seq"], r["parsed_title"] or r["toc_title"])
+        l0 = CATEGORY_L0_OVERRIDES.get(r["l0"], r["l0"])
 
         cur.execute(
             """INSERT INTO regulations
                (id, seq, title, category_l0, category_l1, department, enact_date, status, source_pages)
                VALUES (?, ?, ?, ?, ?, NULL, ?, '현행', ?)""",
             (r["seq"], r["seq"], title,
-             r["l0"], r["l1"], r["enact_date"], pages_str),
+             l0, r["l1"], r["enact_date"], pages_str),
         )
         reg_id = r["seq"]
 

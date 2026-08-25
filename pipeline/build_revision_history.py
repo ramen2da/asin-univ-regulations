@@ -93,7 +93,13 @@ PUA_RE = re.compile('[-]')
 
 
 def strip_for_noise_check(s):
-    s = re.sub(f'[\\s{ZERO_WIDTH_CHARS}]+', '', s or '')
+    # "[표 - 별표 참조]" markers stand in for an excluded in-body table; their
+    # exact position (which nearby article picks it up) is placed at the
+    # median of the dropped table words' reading order, which can shift
+    # between editions even when neither the table nor the article text
+    # actually changed - not a real content difference, so ignore it here.
+    s = (s or '').replace('[표 - 별표 참조]', '')
+    s = re.sub(f'[\\s{ZERO_WIDTH_CHARS}]+', '', s)
     s = PUA_RE.sub('', s)
     s = re.sub(r'\.{1,}', '.', s)
     return s
