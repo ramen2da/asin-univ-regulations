@@ -481,7 +481,10 @@ async function loadDetail(id) {
 
   const amendHtml = r.amendments.length
     ? `<div class="amend-list">제·개정 이력: ${r.amendments
-        .map((d) => `<a href="#" class="amend-date-link" data-date="${d}">${d}</a>`)
+        .map((d) => {
+          const cls = revisionsMap[d] ? "amend-date-link has-revision" : "amend-date-link";
+          return `<a href="#" class="${cls}" data-date="${d}">${d}</a>`;
+        })
         .join(", ")}</div>
        <div class="amend-note" id="amendNote" style="display:none"></div>`
     : "";
@@ -500,7 +503,6 @@ async function loadDetail(id) {
        <div class="reg-meta">
          분류: ${[r.category_l0, r.category_l1].filter(Boolean).join(" &gt; ")}
          ${r.enact_date ? ` · 제정일: ${r.enact_date}` : ""}
-         ${r.source_pages ? ` · 원본 PDF p.${r.source_pages}` : ""}
        </div>
        ${amendHtml}
        ${renderArticles(r.articles)}
@@ -611,7 +613,6 @@ async function loadRevisionCompare(regId, revisionId) {
   setContent(
     renderDocHeader(`&larr; ${reg.title}으로 돌아가기`, breadcrumbInner, `신구조문대조표 (${rev.revised_at})`),
     `<div class="reg-detail" style="font-size:${docFontSize}px">
-       ${rev.summary ? `<p class="reg-meta">개정 사유: ${rev.summary}</p>` : ""}
        <table class="compare-table">
          <thead><tr><th>조문</th><th>개정 전</th><th>개정 후</th></tr></thead>
          <tbody>${renderCompareRows(rev.changes) || '<tr><td colspan="3">변경 내역이 없습니다.</td></tr>'}</tbody>

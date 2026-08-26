@@ -699,13 +699,21 @@ table.body-hit-list td {
   margin-bottom: 6px;
 }
 .amend-list a.amend-date-link {
-  color: var(--brand);
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px dotted var(--brand);
   cursor: pointer;
   font-variant-numeric: tabular-nums;
 }
-.amend-list a.amend-date-link:hover {
+/* Most amendment dates predate this system and have no stored old/new text
+   to compare - only dates with an actual 신구조문대조표 get the "this is
+   worth clicking" treatment, so readers aren't lured into tapping every
+   date only to hit the same "no comparison available" note. */
+.amend-list a.amend-date-link.has-revision {
+  color: var(--brand);
+  font-weight: 600;
+  border-bottom: 1px dotted var(--brand);
+}
+.amend-list a.amend-date-link.has-revision:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
   border-bottom-style: solid;
