@@ -272,7 +272,7 @@ function renderArticles(articles) {
     }
     const artNo = a.sub_no ? `제${a.no}조의${a.sub_no}` : `제${a.no}조`;
     const anchorId = a.sub_no ? `article-${a.no}-${a.sub_no}` : `article-${a.no}`;
-    html += `<div class="article" id="${anchorId}"><span class="art-no">${artNo}${a.title ? `(${a.title})` : ""}</span>${highlightAmendments(formatArticleBody(stripArticleHead(a.body, a.no, a.sub_no)))}</div>`;
+    html += `<div class="article" id="${anchorId}"><span class="art-no"><span class="art-no-badge">${artNo}</span>${a.title ? `(${a.title})` : ""}</span>${highlightAmendments(formatArticleBody(stripArticleHead(a.body, a.no, a.sub_no)))}</div>`;
   });
 
   return html;
@@ -436,7 +436,7 @@ function formatArticleBody(text) {
       html += `<span class="list-indent">${marker}`;
       spanOpen = true;
     } else {
-      html += `<br>${marker}`;
+      html += `<br><span class="hang-marker">${marker}</span>`;
     }
     if (isCircled) seenCircled = true;
     lastIndex = markerRe.lastIndex;

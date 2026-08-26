@@ -5,13 +5,16 @@
 <title>아신대학교 규정정보시스템</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="header-top">
-      <h1 id="homeLink" title="홈으로 이동">아신대학교 규정정보시스템</h1>
+      <div class="masthead-id">
+        <div class="eyebrow"><span class="seal-dot"></span>OFFICIAL REGULATIONS · ACTS</div>
+        <h1 id="homeLink" title="홈으로 이동">아신대학교 규정정보시스템</h1>
+      </div>
       <nav class="top-nav">
         <a href="#" id="navRecent">최근 제·개정</a>
         <a href="#" id="navRevisions">개정내역</a>
@@ -26,7 +29,9 @@
           <option value="title">규정명</option>
           <option value="body">규정내용</option>
         </select>
-        <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+        <div class="search-field">
+          <input type="text" id="searchInput" placeholder="규정명 또는 조문 내용으로 찾아보기">
+        </div>
         <button id="searchBtn">검색</button>
       </div>
     </div>

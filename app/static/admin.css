@@ -185,10 +185,10 @@ body.admin-body {
 }
 .admin-edit-body textarea.changed {
   border-color: var(--accent);
-  background: #fffaf0;
+  background: var(--accent-tint);
 }
 .admin-edit-body textarea.changed:focus {
-  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+  box-shadow: 0 0 0 3px var(--accent-tint);
 }
 
 .admin-form-row {
