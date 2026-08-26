@@ -279,14 +279,29 @@ function renderArticles(articles) {
 }
 
 function renderAttachmentFile(att) {
-  if (!att.file_url) {
-    return `<p class="placeholder">원본 PDF에서 이 서식의 페이지를 찾지 못했습니다 (원본 문서에 내용 없이 삭제 표시만 있는 경우일 수 있습니다).</p>`;
+  if (att.file_url) {
+    return `
+      <div class="attachment-file">
+        <a href="${att.file_url}" target="_blank" class="file-open-link">새 창에서 원본 열기 / 다운로드</a>
+        <iframe src="${att.file_url}" class="attachment-pdf" title="${att.label}"></iframe>
+      </div>`;
   }
-  return `
-    <div class="attachment-file">
-      <a href="${att.file_url}" target="_blank" class="file-open-link">새 창에서 원본 열기 / 다운로드</a>
-      <iframe src="${att.file_url}" class="attachment-pdf" title="${att.label}"></iframe>
-    </div>`;
+  // No source PDF page to link to (e.g. this attachment came from a scanned
+  // HWP document with no page range of its own, not the main PDF corpus) -
+  // render its captured text/table lines directly instead of the "page not
+  // found" placeholder, which would otherwise wrongly read as missing data.
+  if (att.lines && att.lines.length) {
+    const body = att.lines
+      .map((line) => {
+        const t = line.trim();
+        return t.startsWith("<table") || t.startsWith("<div class=\"article-table-wrap\"")
+          ? line
+          : `<p>${escapeHtml(line)}</p>`;
+      })
+      .join("");
+    return `<div class="attachment-file attachment-text">${body}</div>`;
+  }
+  return `<p class="placeholder">원본 PDF에서 이 서식의 페이지를 찾지 못했습니다 (원본 문서에 내용 없이 삭제 표시만 있는 경우일 수 있습니다).</p>`;
 }
 
 function renderOutline(articles) {

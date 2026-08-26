@@ -872,6 +872,10 @@ table.inline-table tr:first-child td {
 .attachment-file {
   margin-top: 16px;
 }
+.attachment-text p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+}
 .file-open-link {
   display: inline-block;
   margin-bottom: 10px;
