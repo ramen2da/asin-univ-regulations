@@ -90,6 +90,12 @@ ZERO_WIDTH_CHARS = '​‌‍﻿'
 # font subsets where decorative brackets/symbols land on different PUA
 # codepoints between editions despite rendering identically - not real content.
 PUA_RE = re.compile('[-]')
+# Interpunct-style list-separator dots (e.g. '위조․변조 및 훼손') - this 
+# session's legacy HWP batch (file10-77/univ_XX snapshots) consistently 
+# uses U+2024 ONE DOT LEADER where the current PDF corpus uses U+00B7 
+# MIDDLE DOT for the exact same separator; same rendered glyph and 
+# meaning, so treat as noise like the PUA case above, not real content.
+INTERPUNCT_RE = re.compile('[․·‧・]')
 
 
 def strip_for_noise_check(s):
@@ -101,6 +107,7 @@ def strip_for_noise_check(s):
     s = (s or '').replace('[표 - 별표 참조]', '')
     s = re.sub(f'[\\s{ZERO_WIDTH_CHARS}]+', '', s)
     s = PUA_RE.sub('', s)
+    s = INTERPUNCT_RE.sub('', s)
     s = re.sub(r'\.{1,}', '.', s)
     return s
 
@@ -143,6 +150,36 @@ def article_label(no, sub_no, titles_by_key):
     return f'{base}({t})' if t else base
 
 
+ARTICLE_OWN_TITLE_RE = re.compile(r'^제\s*\d+\s*조(?:\s*의\s*\d+)?\s*\(([^)]*)\)')
+
+
+def _article_own_title(body):
+    m = ARTICLE_OWN_TITLE_RE.match((body or '').strip())
+    return m.group(1).strip() if m else None
+
+
+def _titles_conflict(old_body, new_body):
+    """True when the two bodies' own "제N조(제목)" headers name completely
+    different topics. A handful of these older regulations (found via this
+    session's legacy HWP batch, which reaches back to a 2012 snapshot) were
+    restructured heavily enough between then and now that articles got
+    inserted/removed and everything after shifted - comparing "article 8"
+    in each snapshot then silently compares two unrelated provisions that
+    only happen to share a number. A genuine amendment to an existing
+    article essentially never renames what the article is about (the title
+    is closer to the provision's fixed name; amendments touch its body) -
+    a title come out totally different is a much stronger signal of
+    renumbering than of a real edit, so this is checked only for
+    'fallback'-dated changes (no amendment-tag evidence either way)."""
+    old_t, new_t = _article_own_title(old_body), _article_own_title(new_body)
+    if not old_t or not new_t:
+        return False
+    old_t, new_t = old_t.strip(), new_t.strip()
+    if old_t == new_t:
+        return False
+    return old_t not in new_t and new_t not in old_t
+
+
 def diff_regulation_timeline(regid, entries, current_body_map, current_date, titles_by_key):
     """entries: sorted list of (date, body_map) from historical snapshots (oldest
     first). Appends the live current state as the final point, then walks
@@ -150,6 +187,7 @@ def diff_regulation_timeline(regid, entries, current_body_map, current_date, tit
     full = list(entries) + [(current_date, current_body_map)]
 
     changes_by_date = defaultdict(list)
+    retitled_skipped = 0
     all_keys = set()
     for _, bm in full:
         all_keys.update(bm.keys())
@@ -167,6 +205,11 @@ def diff_regulation_timeline(regid, entries, current_body_map, current_date, tit
                     prev_present = prev_present or present
                     continue
                 date, method = resolve_change_date(prev_body, body, d)
+                if method == 'fallback' and _titles_conflict(prev_body, body):
+                    retitled_skipped += 1
+                    prev_body = body if present else prev_body
+                    prev_present = prev_present or present
+                    continue
                 changes_by_date[date].append({
                     'article_no': int(no),
                     'article_sub_no': int(sub_no) if sub_no else None,
@@ -182,7 +225,7 @@ def diff_regulation_timeline(regid, entries, current_body_map, current_date, tit
                 pass  # newly added article - not modeled in this pass
             prev_body = body if present else prev_body
             prev_present = prev_present or present
-    return changes_by_date
+    return changes_by_date, retitled_skipped
 
 
 # Manually reviewed after inspecting every non-tag-dated ("fallback") change:
@@ -194,6 +237,13 @@ EXCLUDE_FALLBACK = {
     (1, '2026-06-23', 72, None),  # an existing "(개정 2025.8.6.)" tag vanished - unexplained, not trustworthy
     (27, '2023-12-14', 88, None),  # "항신설" -> "개정" label swap for the same already-known date
     (85, '2023-04-28', 5, None),  # the regulation's own front-matter date history got injected mid-sentence
+    (103, '2023-02-09', 5, None),  # 예비군중대운영규정 제5조's own "편제표" table renders as flattened
+                                    # plain text in one PDF edition's extraction and a proper <table> in
+                                    # the next - same table, just an extraction-quality difference between
+                                    # two editions' own PDF renders, not a real amendment (found while
+                                    # sampling this session's newly-added legacy-HWP-batch changes, but
+                                    # this specific pair is between two of the original 18 PDF editions,
+                                    # unrelated to that batch).
 }
 
 # For these the naive "date we first observed the change" is wrong; the
@@ -230,12 +280,14 @@ def main():
     today = snapshots[-1]['date']
     final = defaultdict(lambda: defaultdict(list))  # regid -> date -> [changes]
     dropped = 0
+    retitled_total = 0
 
     for regid, entries in timeline.items():
         entries_sorted = sorted(entries, key=lambda x: x[0])
-        changes = diff_regulation_timeline(
+        changes, retitled = diff_regulation_timeline(
             regid, entries_sorted, current_by_reg.get(regid, {}), today, titles_by_reg_key.get(regid, {})
         )
+        retitled_total += retitled
         for date, items in changes.items():
             for it in items:
                 excl_key = (regid, it['observed_at_snapshot'], it['article_no'], it['article_sub_no'])
@@ -247,7 +299,11 @@ def main():
 
     total_changes = sum(len(items) for by_date in final.values() for items in by_date.values())
     print(f'regulations with confirmed historical changes: {len(final)}', file=sys.stderr)
-    print(f'total article-change events to insert: {total_changes} (dropped as noise: {dropped})', file=sys.stderr)
+    print(
+        f'total article-change events to insert: {total_changes} '
+        f'(dropped as noise: {dropped}, dropped as likely renumbering/title-mismatch: {retitled_total})',
+        file=sys.stderr,
+    )
 
     with open(os.path.join(os.path.dirname(__file__), 'output', 'revision_history_report.json'), 'w', encoding='utf-8') as f:
         json.dump({str(k): v for k, v in final.items()}, f, ensure_ascii=False, indent=2)
