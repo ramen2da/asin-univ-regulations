@@ -1083,6 +1083,44 @@
     ]
   },
   {
+    "regulation_seq": 95,
+    "revised_at": "2023.08.17",
+    "summary": "과거 규정집 PDF 대조로 자동 확인된 개정 이력",
+    "changes": [
+      {
+        "article_no": 5,
+        "article_sub_no": null,
+        "article_title": null,
+        "old_body": "제5조 (인증의 취소) 동문교회 인증 후에라도 신청서류 및 인증심사 과정 중 파악된 내용이 사실과 다르거나 본교의 설립목적 및 교육이념에 부합하지 않게 교회가 운영될 경우, 위원회의 심의를 거쳐 총장은 인증을 취소할 수 있으며 해당 교회는 즉시 인증패를 본교에 반납하여야 한다.",
+        "new_body": "제5조 (인증의 취소) 동문교회 인증 후에라도 신청서류 및 인증심사 과정 중 파악된 내용이 사실과 다르거나 본교의 설립목적 및 교육이념에 부합하지 않게 교회가 운영될 경우, 위원회의 심의를 거쳐 총장은 인증을 취소할 수 있으며 해당 교회는 즉시 인증서 및 인증패를 본교에 반납하여야 한다. (개정 2023.8.17.)",
+        "ordinal": 0
+      },
+      {
+        "article_no": 4,
+        "article_sub_no": null,
+        "article_title": null,
+        "old_body": "제4조(절차) ① 동문교회 인증을 위한 절차는 다음 각 호에 따른다. 1. 인증 신청서류 접수(대외협력팀) 2. 서류심사(대외협력팀) 3. 인증심사(위원회) 4. 인증승인(총장) ② 총장은 인증된 동문교회에게는 아신대학교 동문교회 인증패(별지서식 1호)를 수여할 수 있다.",
+        "new_body": "제4조(절차) ① 동문교회 인증을 위한 절차는 다음 각 호에 따른다. 1. 인증 신청서류 접수(대외협력팀) 2. 서류심사(대외협력팀) 3. 인증심사(위원회) 4. 인증승인(총장) ② 총장은 인증된 동문교회에게는 아신대학교 동문교회 인증서(별지서식 1호) 및 인증패(별지서식 2호)를 수여할 수 있다. (개정 2023.8.17.)",
+        "ordinal": 1
+      }
+    ]
+  },
+  {
+    "regulation_seq": 97,
+    "revised_at": "2026.06.23",
+    "summary": "과거 규정집 PDF 대조로 자동 확인된 개정 이력",
+    "changes": [
+      {
+        "article_no": 4,
+        "article_sub_no": null,
+        "article_title": null,
+        "old_body": "제4조(위원회) ① 총장 명의의 업무협약 체결은 대외협력위원회에서 심의한다. ② 소관 부서장 명의의 업무협약 체결은 소관 부서의 관련 위원회 심의 후에 대외협력위원회에서 심의한다.",
+        "new_body": "제4조(위원회) ① 총장 명의의 업무협약 체결은 대외협력위원회에서 심의한다. ② 소관 부서장 명의의 업무협약 체결은 소관 부서의 관련 위원회에서 심의한다. 단, 소관 부서장은 학교차원의 예산이 필요하거나 정책적 판단이 필요한 경우에는 미래조정기획위원회와 대외협력위원회의 심의를 요청한다. (개정 2026.06.23.)",
+        "ordinal": 0
+      }
+    ]
+  },
+  {
     "regulation_seq": 99,
     "revised_at": "2024.03.01",
     "summary": "과거 규정집 PDF 대조로 자동 확인된 개정 이력",
@@ -1284,55 +1322,25 @@
     ]
   },
   {
-    "regulation_seq": 95,
-    "revised_at": "2023.08.17",
-    "summary": "과거 규정집 PDF 대조로 자동 확인된 개정 이력",
-    "changes": [
-      {
-        "article_no": 5,
-        "article_sub_no": null,
-        "article_title": null,
-        "old_body": "제5조 (인증의 취소) 동문교회 인증 후에라도 신청서류 및 인증심사 과정 중 파악된 내용이 사실과 다르거나 본교의 설립목적 및 교육이념에 부합하지 않게 교회가 운영될 경우, 위원회의 심의를 거쳐 총장은 인증을 취소할 수 있으며 해당 교회는 즉시 인증패를 본교에 반납하여야 한다.",
-        "new_body": "제5조 (인증의 취소) 동문교회 인증 후에라도 신청서류 및 인증심사 과정 중 파악된 내용이 사실과 다르거나 본교의 설립목적 및 교육이념에 부합하지 않게 교회가 운영될 경우, 위원회의 심의를 거쳐 총장은 인증을 취소할 수 있으며 해당 교회는 즉시 인증서 및 인증패를 본교에 반납하여야 한다. (개정 2023.8.17.)",
-        "ordinal": 0
-      },
-      {
-        "article_no": 4,
-        "article_sub_no": null,
-        "article_title": null,
-        "old_body": "제4조(절차) ① 동문교회 인증을 위한 절차는 다음 각 호에 따른다. 1. 인증 신청서류 접수(대외협력팀) 2. 서류심사(대외협력팀) 3. 인증심사(위원회) 4. 인증승인(총장) ② 총장은 인증된 동문교회에게는 아신대학교 동문교회 인증패(별지서식 1호)를 수여할 수 있다.",
-        "new_body": "제4조(절차) ① 동문교회 인증을 위한 절차는 다음 각 호에 따른다. 1. 인증 신청서류 접수(대외협력팀) 2. 서류심사(대외협력팀) 3. 인증심사(위원회) 4. 인증승인(총장) ② 총장은 인증된 동문교회에게는 아신대학교 동문교회 인증서(별지서식 1호) 및 인증패(별지서식 2호)를 수여할 수 있다. (개정 2023.8.17.)",
-        "ordinal": 1
-      }
-    ]
-  },
-  {
-    "regulation_seq": 97,
-    "revised_at": "2026.06.23",
-    "summary": "과거 규정집 PDF 대조로 자동 확인된 개정 이력",
-    "changes": [
-      {
-        "article_no": 4,
-        "article_sub_no": null,
-        "article_title": null,
-        "old_body": "제4조(위원회) ① 총장 명의의 업무협약 체결은 대외협력위원회에서 심의한다. ② 소관 부서장 명의의 업무협약 체결은 소관 부서의 관련 위원회 심의 후에 대외협력위원회에서 심의한다.",
-        "new_body": "제4조(위원회) ① 총장 명의의 업무협약 체결은 대외협력위원회에서 심의한다. ② 소관 부서장 명의의 업무협약 체결은 소관 부서의 관련 위원회에서 심의한다. 단, 소관 부서장은 학교차원의 예산이 필요하거나 정책적 판단이 필요한 경우에는 미래조정기획위원회와 대외협력위원회의 심의를 요청한다. (개정 2026.06.23.)",
-        "ordinal": 0
-      }
-    ]
-  },
-  {
     "regulation_seq": 120,
     "revised_at": "2026.04.30",
     "summary": "과거 학칙 PDF 대조로 자동 확인된 개정 이력",
     "changes": [
       {
+        "article_no": 54,
+        "article_sub_no": null,
+        "article_title": null,
+        "old_body": "제54조(조기 졸업) ①계절 학기 수업 및 성적으로 인한 학점 초과 및 기타 방법으로 인하여 소정의 교육 과정을 이수하고 학칙 제5조2 항과 제52조의졸업 요건을 충족한 자는 조기 졸업할 수 있다. ②조기 졸업을 희망하는 자는 6 학기 말 또는 7 학기 말에“조기 졸업 신청서”를 제출하여야한다. (개정2011.05.27.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과</td><td>본 전공만 이수</td></tr><tr><td>～ 2014학년도 입학자</td><td>전체학과</td><td>35</td></tr><tr><td>2015～2022학년도<br>입학자</td><td>신학과</td><td>40</td></tr><tr><td></td><td>선교문화복지학과</td><td>40</td></tr><tr><td></td><td>기독교교육상담학과</td><td>40</td></tr><tr><td></td><td>선교영어학과</td><td>45</td></tr></tbody></table></div> <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td></td><td>선교중국어학과</td><td>45</td></tr></tbody></table></div>",
+        "new_body": "제54조(조기 졸업) ①계절 학기 수업 및 성적으로 인한 학점 초과 및 기타 방법으로 인하여 소정의 교육 과정을 이수하고 학칙 제5조2 항과 제52조의졸업 요건을 충족한 자는 <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상학과</td><td>본 전공 이수</td></tr><tr><td>2026학년도 입학자</td><td>모든학과</td><td>35</td></tr></tbody></table></div> 조기 졸업할 수 있다. ②조기 졸업을 희망하는 자는 6 학기 말 또는 7 학기 말에“조기 졸업 신청서”를 제출하여야한다. (개정2011.05.27.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과</td><td>본 전공만 이수</td></tr><tr><td>～ 2014학년도 입학자</td><td>전체학과</td><td>35</td></tr><tr><td>2015～2022학년도<br>입학자</td><td>신학과</td><td>40</td></tr><tr><td></td><td>선교문화복지학과</td><td>40</td></tr><tr><td></td><td>기독교교육상담학과</td><td>40</td></tr><tr><td></td><td>선교영어학과</td><td>45</td></tr><tr><td></td><td>선교중국어학과</td><td>45</td></tr></tbody></table></div>",
+        "ordinal": 0
+      },
+      {
         "article_no": 50,
         "article_sub_no": null,
         "article_title": null,
-        "old_body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) [표 - 별표 참조] 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.) [표 - 별표 참조] 3. (삭제2015.02.10.)",
-        "new_body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) [표 - 별표 참조] 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.,2026.04.30.) 3. (삭제2015.02.10.)",
-        "ordinal": 0
+        "old_body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과(부)</td><td></td><td>본 전공<br>이수</td><td>연계전공<br>이수</td><td>복수전공<br>이수</td><td>부전공<br>이수</td><td>교양<br>학점</td></tr><tr><td>2004～2014<br>학년도<br>입학자</td><td>전체학과</td><td></td><td>45</td><td>-</td><td>35</td><td>21</td><td>42</td></tr><tr><td>2015학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td>2016학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2017학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2018～2020<br>학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선<br>교<br>영<br>어<br>학<br>과</td><td>TESOL전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td></td><td>선교영어전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>33</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2021∼2023<br>학년도<br>입학자</td><td>전체학부</td><td></td><td>27</td><td>-</td><td>27</td><td>-</td><td>42</td></tr><tr><td>2024학년도<br>입학자부터</td><td>전체학부</td><td></td><td>51</td><td>-</td><td>36</td><td>21</td><td>42</td></tr></tbody></table></div> 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상학부</td><td>제1전공/부전공 이수시</td><td></td><td>제1/2전공 이수시</td><td></td></tr><tr><td></td><td></td><td>제1전공</td><td>부전공</td><td>제1전공</td><td>제2전공</td></tr><tr><td>2023학년도<br>입학자부터</td><td>모든학부</td><td>27</td><td>18</td><td>27</td><td>27</td></tr></tbody></table></div> 3. (삭제2015.02.10.)",
+        "new_body": "제50조(졸업 학점) 졸업에 필요한 학점은 130 학점 이상으로 하되, 전공 과목, 교양 과목의 취 득 학점은 다음 각 호에 따른다(개정2016.03.02., 2017.02.01.). 1. 신입생 본 전공 이수 학점(개정 2015.02.10.2016.03.02., 2017.02.01., 2018.12.14.2021.03.09., 2024.03.01.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상 학과(부)</td><td></td><td>본 전공<br>이수</td><td>연계전공<br>이수</td><td>복수전공<br>이수</td><td>부전공<br>이수</td><td>교양<br>학점</td></tr><tr><td>2004～2014<br>학년도<br>입학자</td><td>전체학과</td><td></td><td>45</td><td>-</td><td>35</td><td>21</td><td>42</td></tr><tr><td>2015학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td>2016학년도<br>입학자</td><td>신학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2017학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>-</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교영어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>-</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2018～2020<br>학년도<br>입학자</td><td>신학과</td><td></td><td>55</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선교문화복지학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>기독교교육상담학과</td><td></td><td>50</td><td>33</td><td>40</td><td>21</td><td>42</td></tr><tr><td></td><td>선<br>교<br>영<br>어<br>학<br>과</td><td>TESOL전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td></td><td>선교영어전공</td><td>60</td><td>33</td><td>45</td><td>30</td><td>42</td></tr><tr><td></td><td>선교중국어학과</td><td></td><td>60</td><td>33</td><td>45</td><td>30</td><td>30</td></tr><tr><td>2021∼2023<br>학년도<br>입학자</td><td>전체학부</td><td></td><td>27</td><td>-</td><td>27</td><td>-</td><td>42</td></tr><tr><td>2024학년도<br>입학자부터</td><td>전체학부</td><td></td><td>51</td><td>-</td><td>36</td><td>21</td><td>42</td></tr></tbody></table></div> 2. 편입생 본 전공 이수 학점(개정2017.02.01., 2023.04.04.,2026.04.30.) <div class=\"article-table-wrap\"><table class=\"inline-table\"><tbody><tr><td>대상</td><td>대상학부</td><td>제1전공/부전공 이수시</td><td></td><td>제1/2전공 이수시</td><td></td></tr><tr><td></td><td></td><td>제1전공</td><td>부전공</td><td>제1전공</td><td>제2전공</td></tr><tr><td>2023학년도<br>2025학년도 까지</td><td>모든학부</td><td>27</td><td>18</td><td>27</td><td>27</td></tr></tbody></table></div> 3. (삭제2015.02.10.)",
+        "ordinal": 1
       }
     ]
   }
