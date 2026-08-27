@@ -65,6 +65,13 @@ BOLD_MARK_RE = re.compile(r'\*\*')
 
 CHAPTER_FRAG_RE = re.compile(r'^제\s*\d*\s*$')
 
+# PyMuPDF's raw per-line text extraction (used for the plain-text batch, see
+# parse_regulation_plain) keeps the source PDF's own page-number footer
+# ("- 2 -") as an ordinary text line - filter it out, since it lands
+# mid-article (at a page break) rather than at a boundary parse_body would
+# otherwise drop as front-matter.
+PAGE_FOOTER_RE = re.compile(r'^-\s*\d+\s*-$')
+
 # kordoc's own Markdown rendering doubles up a nested/indented 호 list item's
 # number as "1. N. " instead of just "N. " (its outer list-bullet numbering
 # leaking in alongside the source document's own item number) - anchored to
@@ -336,7 +343,7 @@ def parse_regulation_plain(txt_path, title_hint):
     front-matter is just the repeated title line (dropped automatically:
     parse_body ignores any line seen before the first 제N조 match)."""
     with open(txt_path, encoding='utf-8') as f:
-        lines = f.read().split('\n')
+        lines = [l for l in f.read().split('\n') if not PAGE_FOOTER_RE.match(l.strip())]
 
     body_start = next(
         (i for i, l in enumerate(lines) if CHAPTER_RE.match(l.strip()) or ARTICLE_RE.match(l.strip())),
