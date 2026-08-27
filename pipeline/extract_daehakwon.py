@@ -293,7 +293,7 @@ def parse_regulation(md_path, title_hint=None, preprocess_scratch_dir=None):
     for l in lines:
         m = DATE_LINE_RE.match(l.strip())
         if m:
-            d = m.group(2).strip().rstrip('.')
+            d = re.sub(r'\s+', '', m.group(2)).rstrip('.')
             amend_dates.append(d)
             if m.group(1) == '제정' and enact_date is None:
                 enact_date = d

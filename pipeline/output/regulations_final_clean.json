@@ -40604,5 +40604,1096 @@
     ],
     "attachments": [],
     "pdf_pages": []
+  },
+  {
+    "seq": 150,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "원격수업 개발 및 운영규정",
+    "parsed_title": "원격수업 개발 및 운영규정",
+    "enact_date": "2020.10.16",
+    "amend_dates": [
+      "2020.10.16",
+      "2021.04.23"
+    ],
+    "article_count": 13,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 본교 정규 교육 과정으로 개발되는 원격 수업 개발 및 운영과 관련된 사항을 규정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "적용 범위",
+        "body": "제2조(적용 범위) 본교 학부, 대학원 정규 교육 과정으로 한한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "용어의 정의",
+        "body": "제3조(용어의 정의) 이 규정에 사용되는 용어의 정의는 다음 각 호와 같다. 1. \"원격 수업\"이란 고등 교육 법 제22조에 근거하여 교수-학습 활동이 서로 다른 시간 또는 공간에서 이루어지는 수업 형태를 의미한다. 원격 수업은 수업의 공간적 특성 및 시간적 특성을 기준으로 동시적 원격 수업 및 비동시적 원격 수업으로 구분 가능하며 실시간 화상 교육 등 동시적 원격 수업 또한 원격 수업으로 인정한다. 2. \"원격 수업 교과목\"이란 중간-기말 고사 등 평가 활동을 제외한 교수-학습 활동의 70 % 이상이 원격 수업의 형 태로 이루어지는 교과목을 의미한다. 대면 수업과 원격 수업이 혼합되어 있는 수업의 경우에도 원격 수업의 비중이 전체 수업(평가 활동 제외) 시 수의 70 % 이상이면 원격 수업 교과목으로 인정한다. 3. \"원격 수업 콘텐츠\"는 원격 수업을 위한 강의 내용을 말한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "개발 자격",
+        "body": "제4조(개발 자격) 원격 수업은 본교의 전임 교원에 한하여 개발한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "개발 과목",
+        "body": "제6조(개발 과목) 본교 학부, 대학원 정규 교육 과정으로 개설된 교과목에 한하여 개발할 수 있다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "제작 기준",
+        "body": "제7조(제작 기준) ① 1차 시 당 콘텐츠 진행(재생) 시간이 25분 이상(1 학점 기준)이 되도록 제작한다. 단, 토론, 프 로젝트 기반 원격 수업 등은 강의 콘텐츠의 순수 재생 시간이 25분 이하로 제작 가능하다. ② 콘텐츠 진행 시간을 포함한 1차 시 당 총 학습 시간은 50분 이상이 되도록 구성한다. 이 때 원격 수업의 학습 시간 및 이수 시간은 콘텐츠 재생 시간, 질의· 응답 및 온라인 토론 시간 등을 종합한 개념이다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "개발 유형",
+        "body": "제8조(개발 유형) ① 원격 수업은 신규 개발과 수정 개발로 구분한다. ② 수정 개발은 ‘원격 수업 관리 위원회’의 논의를 통해 수정 및 보완이 결정된 교과목에 한한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "9",
+        "sub_no": null,
+        "title": "원격 수업 개발",
+        "body": "제9조(원격 수업 개발) ① 학부 및 대학원에서 원격 수업 개발 신청 접수를 받아 1차 심의를 한다. ② 1차 심의를 통과한 교과목을 취합하여 ‘원격 수업 관리 위원회’에서 논의를 통해 개발 과목을 확정한다. ③ 원격 수업 제작은 교육 혁신 센터에서 제작한다. ④ 원격 수업의 콘텐츠가 제작 일로부터 3년이 경과된 경우 ‘원격 수업 관리 위원회’가 콘텐츠 유지 또는 수정 여부에 대한 평가를 실시하고, 평가 결과에 따라 유지, 수정, 보완, 재제작 등의 조치를 취할 수 있다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "10",
+        "sub_no": null,
+        "title": "원격 수업의 운영",
+        "body": "제10조(원격 수업의 운영) ① 원격 수업의 운영은 학부 교무 지원 팀 및 대학원 교학 지원 팀에서 담당한다. ② 학부 과정은 학기별 개설 가능한 원격 수업의 교과목 수는 해당 연도 학기별 각 학과(전공)에 개설된 총 교과목 학점 수의 100분의 70을 초과할 수 없다. (개정 2021.04.23.) ③ 대학원 과정은 전공별로 졸업에 필요한 학점의 최대 100분의 80 이내에서 원격 수업을 운영할 수 있으며, 전공 별로 위 범위 내에서 별도로 운영하는 경우 해당 규정을 우선적으로 따른다. (신설 2021.04.23.) ④ 제②항 및 제 ③항에도 불구하고 「재난 및 안전 관리 기본법」 제3조제1호에 따른 재난이 발생하는 등 정상적인 수업 진행이 어려운 경우에는 이를 초과할 수 있다. (신설 2021.04.23.) ⑤ 원격 수업의 시수 및 학점은 대면 수업과 동일하게 인정한다. ⑥ 원격 수업의 출석 인정 기준은 수업 계획서에 명시하며 LMS(Learning Management System)을 통해서 관리한다. 단 ④항과 같이 천재지변 또는 전염병 등의 사유로 부득이할 경우 개별 과목별 출석 인정 기준을 정해 운 영할 수 있다. ⑦ 중간고사, 기말고사 등 학생의 성적 평가는 출석 평가를 원칙으로 한다. 단, 온라인 평가를 실시하는 경우에는 학사 운영 플랫폼 또는 학습 관리 시스템 내에서 처리하여야하며, 대리 시험 등 부정행위 방지를 위한 조치를 마 련한다. 이외 ④항과 같이 천재지변 또는 전염병 등의 사유로 부득이할 경우 원격 시행을 허용한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "11",
+        "sub_no": null,
+        "title": "콘텐츠 개발 비",
+        "body": "제11조(콘텐츠 개발비) ① 원격 수업 개발과 관련된 콘텐츠 개발비 지원은 ‘원격 수업 관리 위원회’ 논의를 통하여 결정한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "12",
+        "sub_no": null,
+        "title": "원격 수업 관리 위원회",
+        "body": "제12조(원격 수업 관리 위원회) ① 원격 수업 콘텐츠의 질 관리와 원활한 운영· 관리를 위해 ‘원격 수업 관리 위원회’를 구 성한다. ② ‘원격 수업 관리 위원회’는 총 7 인 이내로 구성하되 위원장 및 위원은 총장이 임명한다. ③ ‘원격 수업 관리 위원회’는 다음 각 호의 사항을 심의한다. 1. 원격 수업의 운영 및 관리에 관한 사항. 2. 원격 수업의 콘텐츠의 품질 관리 및 평가에 관한 사항. 3. 원격 수업의 발전에 관한 사항. 4. 원격 수업에 관한 규정 개· 폐에 관한 사항. 5. 원격 수업 콘텐츠 개발비 지원에 관한 사항. 6. 기타 위원장이 요청하는 사항."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "12",
+        "sub_no": "2",
+        "title": "원격 수업 저작물의 지적 재산권",
+        "body": "제12조의2 (원격 수업 저작물의 지적 재산권) ① 본교 원격 수업 제작 지원비를 지원받고 제작된 컨텐츠의 지적 재산권은 본 대학으로 귀속된다. ② 별도 사용을 원할 경우 ‘교육 혁신 센터’와 협의를 통해 사용할 수 있다. (신설 2021.04.23.)"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "13",
+        "sub_no": null,
+        "title": "보 칙",
+        "body": "제13조(보칙) 이 규정을 시행하기 위한 세부 사항은 운영 내규로 따로 정할 수 있다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2020년 10월 16일부터 시행한다.",
+      "(시행일) 이 규정은 2021년 04월 23일부터 시행한다."
+    ],
+    "attachments": [
+      {
+        "label": "[별표 1] 원격 수업 제작 지원비 지원 금액 (신설 2021.04.23.)",
+        "lines": [
+          "<div class=\"article-table-wrap\"><table class=\"inline-table\" class=\"inline-table\"><tr><th>지원금</th><th>1,000,000원</th></tr><tr><td>기준학점</td><td>3학점</td></tr><tr><td>기준재생시간</td><td>1학점당 25분 (3학점 75분 이상)</td></tr><tr><td>기준강좌수</td><td>13강좌 (15주 수업기준 중간/기말고사 제외)</td></tr></table></div>",
+          "- ※ 위 기준과 다르게 제작된 원격 강좌의 경우 ‘원격 수업 관리 위원회’ 논의를 통하여 결정한다."
+        ]
+      }
+    ],
+    "pdf_pages": []
+  },
+  {
+    "seq": 151,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "수업평가 규정",
+    "parsed_title": "수업평가 규정",
+    "enact_date": "2014.08.25",
+    "amend_dates": [
+      "2014.08.25",
+      "2019.08.01",
+      "2020.03.26"
+    ],
+    "article_count": 9,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 아세아 연합 신학 대학교 교원의 강의 평가 시행 및 운영에 대한 세부 사항을 규정함으로써 강의의 질적 향상을 위한 기초 자료를 획득하고, 합리적인 교원 인사 및 평가의 근거 자료로 활용함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "평가 대상",
+        "body": "제2조(평가 대상) 강의 평가는 당해 정규 학기 및 계절 학기에 개설된 전 과목에 대하여 실시하는 것을 원 칙으로 한다. 단 다음의 각 호의 1에 해당하는 과목은 평가 대상에서 제외한다. 1. 수강 인원 10명 미만의 과목 2. 현장 실습, 사회봉사 등 외부 실습 과목 3. 경 건 훈련원 및 채플 4. E-Learning 강좌 5. 매 학기 총장의 사전 허가를 받은 강의 평가 부적합 과목"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "평가 시기 및 방법",
+        "body": "제3조(평가 시기 및 방법) ⓵ 강의 평가는 해당 과목 수강생이 본교 종합 정보 시스템을 통하여 매 학기 말에 실시한다. ⓶ 강의 평가에 학생들의 참여를 유도하기 위해 강의 평가 미실시 학생은 성적 확인 및 수강 신청을 제한할 수 있다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "평가 항목 및 문항",
+        "body": "제4조(평가 항목 및 문항) ⓵ 수업 평가서의 평가 항목은 수업 준비성, 수업 진행 능력, 학생과의 상호 작용, 학습자의 참여 등을 반영한다. ⓶ 이론과 분리된 실험, 실습 과목은 설문지 문항을 달리하여 평가할 수 있다. ⓷ 강의 평가는 선다형 16개 문항과 개방형 2개 문항으로 구성하되, 강의 평가 설문 항목은 <별표 1>과 같다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "평가 점수 및 배점 기준",
+        "body": "제5조(평가 점수 및 배점 기준) ⓵ 강의 평가 점수는 5점 척도로 계량화하고 소수점 셋째 자리에서 반 올 림하여 산정한다. ⓶ 과목별 강의 평가 점수는 수강 학생들의 평가 점수의 산술 평균으로 산정하되, 다음 각 호의 기준에 해당하는 것은 제외한다. 1. 수강 과목의 성적 평가 등급이 ‘F’인 학생의 강의 평가 점수 2. 강의 평가 참여 학생이 하위 1 척도에 90 % 이상 동일하게 응답한 점수 ⓷ 각 설문 항목별 최고 점수는 5점으로 하며, 아래 표의 기준에 따라 설문 내용을 평가한다. <div class=\"article-table-wrap\"><table class=\"inline-table\"> <tr><th colspan=\"5\">평가등급</th></tr> <tr><td>아주 그렇다</td><td>그렇다</td><td>보통이다</td><td>아니다</td><td>전혀 아니다</td></tr> <tr><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr> </table></div> ⓸ 상위/ 하위 점수 각 5 %는 점수 산정에서 제외하고, 20명 미만의 경우 상위/ 하위 각 1명의 점수를 제외한다. 20명 이상 강의에서 5 % 제외 시 소수점 인원은 올림으로 처리한다. ⓹ 60명 이상의 강의의 경우 0.1점의 가산점을 준다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "평가 결과 통보 및 공개",
+        "body": "제6조(평가 결과 통보 및 공개) ⓵ 강의 평가 결과는 해당 교원에게 종합 정보 시스템을 열람하도록 안내함으로써 통보를 갈음한다. ⓶ 강의 평가 결과는 교수 개인이 종합 정보 시스템에서 확인 가능하도록 상시 공개한다. ⓷ 학생은 종합 정보 시스템에서 담당 교수별, 교과목별 강의 평가 점수를 상시 열람할 수 있다. ⓸ 강의 평가 결과는 교육 혁신 센터에서 분석하고 학기 종료 2개월 이내에 강의 평가 결과 보고서를 교 무 처장에게 제출한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "평가 결과 활용",
+        "body": "제7조(평가 결과 활용) ⓵ 담당 교수는 강의 평가를 통해 자신의 강의를 개선하는 준거 자료로 적극 활용한다. ⓶ 강의 평가 결과는 교원 업적 평가, 교원 재임용 및 승진, 강사 및 겸임 또는 초빙 교원 재임용 평가 자 료로 활용할 수 있다. ⓷ 학과장은 학과의 교육 역량 제고, 강의 및 교육 과정 개선, 비전임 교원 및 강사 임용 등을 위하여 소 속 교수의 강의 평가 결과를 요구· 활용할 수 있다. ⓸ 학생은 강의 평가 결과를 수강 신청 등에 참고 자료로 활용할 수 있다. ⓹ 당해 학기 전 과목 강의 평가 전체 평점이 가장 높은 교수(전임 교원과 강사로 나누어 각 1 인)에게는 MVP(Most Valuable Professor) 상을, 전 학기 대비 강의 평가 전체 평점이 가장 많이 상승한 교수(전임 교원과 강사로 나누어 각 1 인)에게는 MIP(Most Improved Professor) 상을 포상한다. ⓺ 전임 교수의 강의 평가 점수가 한 과목이라도 3.8 미만인 경우 총장 명의의 안내문을 발송하고, <별 지 서식 제1호>의 강의 개선 보고서(CQI: Continuous Quality Improvement) 양식에 의거 자기 분석 및 강의 개선 방안을 제출해야한다. 미제출 시 교내 연구비를 제한한다. ⓻ 전임 교수의 강의 평가 평균 평점이 3.8 미만이거나 2회 연속 3.8 미만 과목이 한 과목이라도 있는 경우 교육 혁신 센터에서 주관하는 강의력 향상 프로그램과 외부 교수법 연수를 이수해야하며 교육 혁 신 센터는 프로그램 이수 현황을 교무처장에게 보고한다. 미이수 시 교내 연구비를 제한하고 연 구 년 선 발에서 제외한다. 단 신임 교원의 경우 강의 평가 결과와 무관하게 임용 후 1년 이내에 강의 클리닉 코 스와 외부 교수법 연수를 이수해야한다. ⓼ 비전임 교수는 3.5 미만의 평가가 한 과목이라도 나올 경우 해당 교수의 모든 강의를 위촉하지 않으며, 3.8 미만 \\~3.5 이상인 경우 한 학기 더 기회를 주되 연속하여 3.8 미만이 나온 경우 위촉하지 않는다. 단 해당 학과에서 해당 교수의 소명 서를 받아 의견서를 제출한 경우 검토하여 위촉 여부를 결정할 수 있다. ⓽ 교양 과목의 평가 점수가 3.8 미만인 과목 중 하위 5개 과목은 과목 담당 교수를 교체하거나 폐지한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "비밀 유지",
+        "body": "제8조(비밀 유지) 강의 평가 업무에 관여한 교직원은 업무와 관련하여 취득한 사실을 누설하여서는 안 된다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "9",
+        "sub_no": null,
+        "title": "준용",
+        "body": "제9조(준용) 이 규정에 명시되지 않은 사항은 본교 관련 규정을 준용하고 그 이외의 사항은 총장의 승 인을 얻어 시행한다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2014년 08월 25일부터 시행한다.",
+      "(시행일) 이 규정은 2019년 08월 01일부터 시행한다.",
+      "(시행일) 이 규정은 2020년 03월 27일부터 시행한다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 152,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "아신4C교양인증제 운영규정",
+    "parsed_title": "아신4C교양인증제 운영규정",
+    "enact_date": "2020.10.16",
+    "amend_dates": [
+      "2020.10.16",
+      "2020.12.01"
+    ],
+    "article_count": 7,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 아신 4C 교양 인증제의 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "정의",
+        "body": "제2조(정의) 아신 4C 교양 인증제는 학생이 핵심 역량에 근거한 교과 및 비교과 교양 과정을 이수한 것을 인증하는 제 도이다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "대상",
+        "body": "제3조(대상) 2020 학년도 2 학기 재학생부터 적용한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "구성",
+        "body": "제4조(구성) 본교 핵심 역량에 따른 영역별 프로그램은 다음과 같이 구성한다. (개정 2020.12.01.) <div class=\"article-table-wrap\"><table class=\"inline-table\" class=\"inline-table\"><tr><th>본교 핵심역량</th><th>영역별 프로그램 명칭</th></tr><tr><td>신앙과 인성</td><td>인성 프로그램 Character</td></tr><tr><td>글로벌 민감성과 탁월성</td><td>글로벌 인재 프로그램 Competence</td></tr><tr><td>창의•융합 역량</td><td>C.C. 프로그램 Creativity &amp; Convergence</td></tr><tr><td>공감과 소통의 리더십</td><td>소.나.기. 프로그램 (소통과 나눔의 기독리더) Communication</td></tr></table></div>"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "영역별 이수 기준",
+        "body": "제5조(영역별 이수 기준) 영역별 이수 기준은 별표 1과 같다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "인증서 수여",
+        "body": "제6조(인증서 수여) 제5조의‘영역별 이수 기준’을 충족한 경우에 인증서를 수여한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "보 칙",
+        "body": "제7조(보칙) 이 규정을 시행하기 위한 세부 사항은 운영 내규로 따로 정할 수 있다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2020년 10월 16일부터 시행한다.",
+      "(시행일) 이 규정은 2020년 12월 01일부터 시행한다."
+    ],
+    "attachments": [
+      {
+        "label": "[별표 1] 아신 4C 교양 인증제 영역별 이수 기준 표 (개정 2020.12.01.)",
+        "lines": [
+          "<div class=\"article-table-wrap\"><table class=\"inline-table\">\n<tr><th>핵심역량</th><th colspan=\"2\">이수 조건</th></tr>\n<tr><td rowspan=\"2\">인성 프로그램<br>Character<br>도덕과 윤리의식을 고취시키며<br>기독교적 지성(Christian mind)을<br>가진 인재</td><td>교과</td><td>코어과목 – 성경과 기독교인의 삶<br>선택과목 – 12 학점</td></tr>\n<tr><td>비교과</td><td>학과 MT 3 회 이상 그리고<br>사회봉사인증제(교과+비교과) Pass 그리고<br>경건점수 직전학기까지 전부 Pass</td></tr>\n<tr><td rowspan=\"2\">글로벌 인재 프로그램<br>Competence<br>세계 시민의식을 바탕으로 글로벌<br>환경에 적응하고 소통하며, 국제적<br>문제를 해결할 수 있는 인재</td><td>교과</td><td>코어과목 – 글로벌 프론티어 프로그램<br>선택과목 – 12 학점</td></tr>\n<tr><td>비교과</td><td>해외 단기선교나 해외봉사 1 회 이상 참여<br>(외부 기관(교회)인정됨)</td></tr>\n<tr><td rowspan=\"2\">C.C. 프로그램<br>Creativity & Convergence<br>종합적이고 창의적인 판단능력으로<br>다양한 지식과 정보를 결합해 새로운<br>가치를 창출해 낼 수 있는 인재</td><td>교과</td><td>코어과목 – 창의•융합 역량 프로젝트<br>선택과목 – 12 학점</td></tr>\n<tr><td>비교과</td><td>학생상담소 또는 교육혁신센터<br>프로그램에서 2 개 이상 참여</td></tr>\n<tr><td rowspan=\"2\">소.나.기. 프로그램<br>(소통과 나눔의 기독리더)<br>Communication<br>공동체 정신을 기초로 소통과 화합을<br>이끌어 내 인류 사회에 기여할 수<br>있는 탁월한 인재</td><td>교과</td><td>코어과목 – 공감과 소통의 리더십<br>선택과목 - 12 학점</td></tr>\n<tr><td>비교과</td><td>사회봉사인증제(교과+비교과) Pass 그리고<br>사회봉사센터 또는<br>자원봉사동아리의 봉사 활동 2회 이상</td></tr>\n</table></div>",
+          "- ※ 영역별 선택 이수 과목은 별도로 정한다."
+        ]
+      },
+      {
+        "label": "[별 지 서식 제1-1호] 아신 4C 교양 인증서: 인성 프로그램 (개정 2020.12.01.) 제 호 아신 4C 교양 인증제 인증서 성 명 생년월일 학부(학과) 위 사람은 재학 중 도덕과 윤리 의식과 함께 기독교적 지성을 가진 인재 양성을 위한 교과/ 비교과를 이수하여 ‘아신 4C 교양 인증제-인성(Character) 프로그램’의 인증서를 수여함 202 ○년 ○월 ○일 아세아연합신학대학교 총장 No. Ashin 4C Humanities Certificate Name Birthdate Major The “Ashin 4C Humanities Certificate for Competency Program” is awarded to the above individual for the completion of the curricular/extra-curricular requirements for competency training in moral and ethical awareness, as well as Christian mindset. Month Day, Year sign President",
+        "lines": []
+      },
+      {
+        "label": "[별 지 서식 제1-2호] 아신 4C 교양 인증서: 글로벌 인재 프로그램 (개정 2020.12.01.) 제 호 아신 4C 교양 인증제 인증서 성 명 생년월일 학부(학과) 위 사람은 재학 중 세계 시민 의식을 바탕으로 글로벌 환경에 적응하고 소통하며, 국제적 문제를 해결할 수 있는 인재 양성을 위한 교과/ 비교과를 이수하여 ‘아신 4C 교양 인증제-글로벌 인재(Competence) 프로그램’의 인증서를 수여함 202 ○년 ○월 ○일 아세아연합신학대학교 총장 No. Ashin 4C Humanities Certificate Name Birthdate Major The “Ashin 4C Humanities Certificate for Global Competency Program” is awarded to the above individual for the completion of the curricular/extra-curricular requirements for competency training in global environmental adjustment and communication, as well as international problem solving, based on the awareness of global citizenship. Month Day, Year sign President",
+        "lines": []
+      },
+      {
+        "label": "[별 지 서식 제1-3호] 아신 4C 교양 인증서: C.C. 프로그램 Creativity & Convergence (개정 2020.12.01.) 제 호 아신 4C 교양 인증제 인증서 성 명 생년월일 학부(학과) 위 사람은 재학 중 종합적이고 창의적인 판단 능력으로 다양한 지식과 정보를 결합해 새로운 가치를 창출해 낼 수 있는 인재 양성을 위한 교과/ 비교과를 이수하여 ‘아신 4C 교양 인증제-C.C.(Creativity & Convergence)프로그램’의 인증서를 수여함 202 ○년 ○월 ○일 아세아연합신학대학교 총장 No. Ashin 4C Humanities Certificate Name Birthdate Major The “Ashin 4C Humanities Certificate for Creativity & Convergence Program” is awarded to the above individual for the completion of the curricular/extra-curricular requirements for competency training in creation of new values by incorporating various knowledge and information, while exercising holistic and creative decision-making ability. Month Day, Year sign President",
+        "lines": []
+      },
+      {
+        "label": "[별 지 서식 제1-4호] 아신 4C 교양 인증서: 소. 나.기. 프로그램 (소통과 나눔의 기독 리더) (개정 2020.12.01.) 제 호 아신 4C 교양 인증제 인증서 성 명 생년월일 학부(학과) 위 사람은 재학 중 공동체 정신을 기초로 소통과 화합을 이끌어 내 인류 사회에 기여할 수 있는 탁월한 인재 양성을 위한 교과/ 비교과를 이수하여 ‘아신 4C 교양 인증제-소. 나.기. (소통과 나눔의 기독 리더)(Communication)프로그램’의 인증서를 수여함 202 ○년 ○월 ○일 아세아연합신학대학교 총 장 No. Ashin 4C Humanities Certificate Name Birthdate Major The “Ashin 4C Humanities Certificate for Communication and Sharing Program” is awarded to the above individual for the completion of the curricular/extra-curricular requirements for excellent competency training in human societal contribution through communication and reconciliation, based on community mindset. Month Day, Year sign President",
+        "lines": []
+      }
+    ],
+    "pdf_pages": []
+  },
+  {
+    "seq": 153,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "TESOL 운영규정",
+    "parsed_title": "TESOL 운영규정",
+    "enact_date": "2020.10.16",
+    "amend_dates": [
+      "2020.10.16",
+      "2020.12.01"
+    ],
+    "article_count": 7,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 ACTS TESOL 운영에 관하여 필요한 사항을 규정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "정의",
+        "body": "제2조(정의) ACTS TESOL은 다양한 선교의 분야에서 영어 교육 선교의 중요성이 늘어나고 졸업 후 영어 교육 기관에 취업하려는 학생들에게 도움을 주고자 해당 전공자의 관련 교육 과정을 이수한 것을 인증하는 제도이다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "대상",
+        "body": "제3조(대상) 2020 학년도 2 학기 재학생부터 선교 영어 학과 ‘전공자/ 복수 전공 자/ 부전공자/ 연계 전공자’ 또는 학부제에 서 ‘영어’ 트랙을 전공한 자에 한한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "인증 기준",
+        "body": "제4조(인증 기준) TESOL의 기초가 되는 영어 관련 과목 및 영어 교육에 관련된 9 과목 이수하고 졸업 전까지 공인 토익 점수를 700점 이상 획득하여야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "교과목 이수 기준",
+        "body": "제5조(교과목 이수 기준) 영역별 이수 기준은 별표 1과 같다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "인증서 수여",
+        "body": "제6조(인증서 수여) 제4조의‘인증 기준’을 충족한 경우에 인증서를 수여한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "보 칙",
+        "body": "제7조(보칙) 이 규정을 시행하기 위한 세부 사항은 운영 내규로 따로 정할 수 있다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2020년 10월 16일부터 시행한다.",
+      "(시행일) 이 규정은 2020년 12월 01일부터 시행한다."
+    ],
+    "attachments": [
+      {
+        "label": "[별표 1] ACTS TESOL 교과목 이수 기준 표",
+        "lines": [
+          "<div class=\"article-table-wrap\"><table class=\"inline-table\">\n<tr><th>영어 관련과목<br>9과목중<br>3과목 선택</th><th>(1) English Syntax<br>(2) Introduction to Linguistics<br>(3) Screen English<br>(4) English Composition<br>(5) Current Issues in English<br>(6) English Speech Art<br>(7) Basic English Reading Practice<br>(9) Global English Practice</th><th rowspan=\"2\">총9과목이수</th></tr>\n<tr><td>TESOL 관련과목<br>8과목중<br>6과목 선택</td><td>(1) Second Language Acquisition<br>(2) English Teaching Principles & Methods<br>(3) Teaching English in Speaking and Listening<br>(4) Teaching English in Reading and Writing<br>(5) English Teaching through Storytelling<br>(6) 영어교재 개발<br>(7) English Teaching through Multi-media<br>(8) Practicum</td></tr>\n</table></div>"
+        ]
+      },
+      {
+        "label": "[별 지 서식 제1호] ACTS TESOL 인증서 (개정 2020.12.01.) No. TESOL Certificate of Completion 수료증 is Presented to",
+        "lines": [
+          "(name 영문, 한글) For successfully completing the required courses of Teaching English to Speakers of Other Languages (TESOL) and satisfying the requirements of English proficiency. 위 사람은 테 솔(TESOL)의 필수 과정을 성공적으로 이수하고 영어 능력 요건을 충족하였기에 본 수료증을 수여합니다. Day Month, Year President 총장 Asia United Theological University 아세아연합신학대학교"
+        ]
+      }
+    ],
+    "pdf_pages": []
+  },
+  {
+    "seq": 154,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "대학입학전형공정관리위원회 규정",
+    "parsed_title": "대학입학전형공정관리위원회 규정",
+    "enact_date": "2015.09.01",
+    "amend_dates": [
+      "2015.09.01",
+      "2020.10.16"
+    ],
+    "article_count": 9,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 입학 전형 공정 관리 위원회(이하 “위원회”)의 구성과 운영에 관한 사항을 정하는 것을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "설치 목적",
+        "body": "제2조(설치 목적) 위원회는 아세아 연합 신학 대학교의 설립 목적과 교육 이념에 부합하는 입학 제도를 통하여 공정하고 합리적인 방법으로 신입생을 선발하는지를 점검하고 개선 안을 제안함으로써 우리 대학 입학 제도 및 전형의 개선과 발전에 기여함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "기능",
+        "body": "제3조(기능) 위원회는 입학 전형 업무 및 운영에 관한 공정한 관리를 위하여 다음 각 호의 기능을 수행한다. 1. 대학 입학 전형 공정 관리 대책 수립 및 시행에 관한 사항 2. 대학 입학 전형의 자체 감사 및 점검에 관한 사항 3. 수험생의 이의 신청에 대한 내부 감사에 관한 사항(2020.10.16. 개정) 4. 기타 대학 입학 전형 공정 관리와 관련한 사항"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": null,
+        "body": "제3조1(이의 신청 처리) 제3조3 항의 수험생이 이의 신청할 경우 다음 각 호의 절차에 따른다.(2020.10.16. 개정) 1. 대학 입학 전형 결과에 이의가 있는 응시생은 결과 통지를 받은 날로부터 7일 이내에 우리 대학 입학 담 당 부서에 이의 신청을 할 수 있다. 이 경우 이의 신청은 응시생 본인만 신청할 수 있다. 2. 이의 신청이 접수되면 대학 입학 전형 공정 관리 위원회를 개최하여 조사 및 심의를 해야한다. 3. 위원회는 이의 신청을 받은 날로부터 7일 이내에 이의 신청에 대한 조사 및 심의 결과를 신청인과 대학 입학 전형 관리 위원회에 전달하여야한다. 다만, 부득이한 사유로 기간 이내에 결과를 전달할 수 없을 경 우, 7일의 범위에서 연장할 수 있으며 이 경우 신청자에게 관련 내용을 알려야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "적용 범위",
+        "body": "제4조(적용 범위) 이 규정은 대학교의 입학 및 편입학 전형에 적용한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "구성",
+        "body": "제5조(구성) ① 위원회는 위원장을 포함한 3 인 내외의 위원으로 구성한다. ② 위원장, 위원은 본교 교원 총장이 위촉하는 자로 한다. ③ 위원회의 원활한 운영을 위하여 간사 1 인을 둔다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "임기",
+        "body": "제6조(임기) 위원의 임기는 임명 일로부터 당해 학년도 말까지로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "회의",
+        "body": "제7조(회의) ① 위원장은 위원회의 사무를 총괄하고 위원회를 대표한다. ② 위원장은 회의를 소집하고 그 의장이 된다. ③ 회의는 재적 위원 과반수의 출석으로 개회하고, 출석 위원 과반수의 찬성으로 의결한다. ④ 간사는 위원회의 실무를 관장하고 회의록을 작성한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "시행 세칙",
+        "body": "제8조(시행 세칙) 이 규정 외에 필요한 기타 자세한 사항은 위원회 의결 후 총장의 승인을 거쳐 별도로 정할 수 있다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2015년 9월 1일부터 시행한다.",
+      "(시행일) 이 규정은 2020년 10월 16일부터 시행한다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 155,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "학부제운영 시행세칙",
+    "parsed_title": "학부제운영 시행세칙",
+    "enact_date": "2021.03.09",
+    "amend_dates": [
+      "2021.03.09"
+    ],
+    "article_count": 10,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 학부제 운영에 필요한 세부 사항을 규정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "대상",
+        "body": "제2조(대상) 학부제로 입학한 학생에 한하여 적용한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "학부 공통 과목",
+        "body": "제3조(학부 공통 과목) ① 학부 내 각 전공의 이해 및 전공 이수에 필요한 기초 지식의 습득을 돕기 위하여 학부 공통 과목을 개설할 수 있다. ② 학부 공통 과목은 1 학년 교과 과정에 개설한다. ③ 학부 공통 과목의 운영에 관한 사항은 교육 과정 위원회에서 심의 ⋅결정한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "전공 이수",
+        "body": "제4조(전공 이수) 학부 재학생은 재학 중 최소한 두 개 이상의 전공을 반드시 이수하여야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "전공 신청",
+        "body": "제5조(전공 신청) ① 학부 단위로 입학한 학생은 입학한 학부에서 제1 전공을 신청함을 원칙으로 한다. ② 제2 전공 이상은 입학한 학부의 구애를 받지 않고 자유로운 전공 선택이 가능하다. ③ 학생은 교무 처에서 정한 기간 내에 지정된 방식으로 희망 전공을 신청하여야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "전공 개설 인원 및 심의",
+        "body": "제6조(전공 개설 인원 및 심의) ① 전공 개설의 최소 인원은 해당 학년도 신청 인원 기준으로 10명 이상을 원칙으로 한다. ② 전공 배정과 관련된 사항은 교무 위원회 심의를 거쳐 총장의 결재를 받아 확정한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "학부 변경",
+        "body": "제7조(학부 변경) ① 소속 학부 변경은 2 학년 2 학기까지 매 학기별 교무 처에서 공지한 기간 내에 지정된 방식으로 신청하여야한다. ② 교무 처에서는 총장 결재를 받은 후 다음 학기 개강 전까지 지원한 학생에게 결과를 통보한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "전공 변경",
+        "body": "제8조(전공 변경) ① 소속 전공 변경은 3 학년 1 학기까지 매 학기별 교무 처에서 공지한 기간 내에 지정된 방식으로 신청하여야한다. ② 교무 처에서는 총장 결재를 받은 후 다음 학기 개강 전까지 지원한 학생에게 결과를 통보한다. ③ 기 취득 학점 여하에 불구하고 전입된 전공에서 요구하는 필수 과목과 학위 취득에 필요한 최소한의 전 공 학점 이상을 이수하여야한다. ④ 기 취득한 전공 과목 중 전출 전공의 고유한 전공과목은 자유 선택 과목으로 인정하여 졸업에 필요한 이 수학 점으로 처리하며, 전공 변경 전 취득한 학점 중에서 전입된 전공의 전공 과목으로 개설된 과목은 전공 학점으로 인정한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "9",
+        "sub_no": null,
+        "title": "전공 신설",
+        "body": "제9조(전공 신설) ① 전공 신설은 교무 위원회 논의를 거쳐 총장의 결재를 받아 신설한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "10",
+        "sub_no": null,
+        "title": "기타",
+        "body": "제10조(기타) 학부제 운영에 관하여 학칙과 이 규정에 명시되지 아니한 사항은 교무 위원회 심의를 거쳐 총장이 이를 따로 정한다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 규정은 2021년 3월 9일부터 시행한다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 156,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "교과목 개설에 관한 시행세칙",
+    "parsed_title": "교과목 개설에 관한 시행세칙",
+    "enact_date": "2001.05.09",
+    "amend_dates": [
+      "2001.05.09",
+      "2015.12.17"
+    ],
+    "article_count": 4,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 시행 세칙은 교과목 개설에 필요한 사항을 규정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "과목의 개설",
+        "body": "제2조(과목의 개설) ① 교양 교과 과정 위원회 및 전공 교과 과정 위원회에서 결정한 표준 교과 과정에 따라 각 학년, 학기별로 교과목을 개설한다. ② 표준 교과 과정에 등록되지 않은 교과목의 개설을 원하는 경우에는 개설 신청인이 별표 양식의 교과목 개설 신청서를 작성하여 교무 처에 제출하여야한다. ③ 교과목 개설은 각 교과 과정 위원회에서 심의하고 교수 회의의 결의에 의하여 확정된다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "전공 과목 개설 신청",
+        "body": "제3조(전공과목 개설 신청) ① 전공 교과목의 개설은 각 과 교수들의 협의에 의하여 각 과 대표 교수가 신청한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "교양 과목 개설 신청",
+        "body": "제4조(교양 과목 개설 신청) ① 교양 교과목의 개설은 교수, 학생회, 학회장이 요청할 수 있다. ② 교양 교과목 개설을 신청하는 경우에는 개설 학년, 개설 학기, 교과목 명 또는 교과 내용을 반드시 기재하여야하며, 필요에 따라 담당 교수를 추천할 수 있다. ③ 학생이 교양 교과목의 개설을 신청하는 경우에는 20 인 이상의 연명 서를 제출하여야한다."
+      }
+    ],
+    "addenda": [
+      "1. 이 시행 세칙은 2001년 5월 9일부터 시행한다.",
+      "2. 이 시행 세칙은 2015년 12월 17일부터 시행한다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 157,
+    "l0": "일반행정",
+    "l1": "재무회계",
+    "index_no": "1",
+    "toc_title": "등록금심의위원회 규정",
+    "parsed_title": "등록금심의위원회 규정",
+    "enact_date": "2011.11.03",
+    "amend_dates": [
+      "2011.11.03",
+      "2014.08.28",
+      "2015.12.17",
+      "2020.07.10"
+    ],
+    "article_count": 8,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 고등 교육법 제11조및 대학 등록금에 관한 규칙 제2조와 아세 아 연합 신학 대학교(이하 “본교”라 한다) 학칙 제66조에서 규정하고 있는 등록금 심의 위 원 회(이하 “위원회”라 한다)의 구성 및 운영에 관한 사항을 정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "기능",
+        "body": "제2조(기능) 위원회는 본교의 등록금 책정에 관한 사항 및 예· 결산에 관한 사항을 심 의한다. (개정 2015.12.17.)"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "구성",
+        "body": "제3조(구성) ① 위원회는 9 인으로 구성하며 총장이 위촉한다. (개정 2015.12.17) ② 구성원은 다음 각 호와 같다. (개정 2015.12.17., 2020.07.10.) 1. 교직원 4 인(기획 처장, 신학 대학원 장, 학생 처장, 총무 처장) 2. 학생 대표 3 인(신학 대학원 원우 회장, 총학생회장, 총학생회 부회장) 3. 관련 전문가 2 인(해당 학교와 직접적인 이해관계가 있는 자는 제외) ③ 제2항에 따라 어느 하나의 구성 단위에 속하는 위원의 수는 전체 위원 정수(正數)의 2분의 1을 초과하여서는 안 되고, 학부모 및 동문 위원의 총수는 전체 위원 정수의 7분의 1을 초과하여서는 안 된다. ④ 위원장은 위원 중에서 총장이 임명하며 회의 소집 및 진행을 담당한다. ⑤ 위원회 업무의 원활한 수행을 위해 간사를 둘 수 있으며, 간사는 본교 교직원 중에 서 총장이 임명한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "임기",
+        "body": "제4조(임기) 위원의 임기는 1년으로 하되 연임할 수 있다. (개정 2015.12.17)"
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "회의",
+        "body": "제5조(회의) ① 회의는 총장의 요청이 있거나, 위원장이 필요하다고 인정하는 경우 또 는 재적 위원 1/3 이상의 요구가 있는 때에 소집한다. ② 위원회의 개회는 교직원 및 학생이 각 1 인 이상 출석하여야하며, 재적 위원 과반 수의 출석으로 개회하고, 출석 위원 과반수의 찬성으로 의결한다. (개정 2015.12.17) ③ 위원장의 유고 시, 위원 중 연장자가 그 직무를 대행한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "회의록",
+        "body": "제6조(회의록) ① 위원회는 회의의 일시, 장소, 발언 요지, 결정 사항 등이 기록된 회 의 록을 작성하고 보존하여야한다. ② 회의록은 위원회의 동의가 있는 경우 공개할 수 있다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "자료 제공",
+        "body": "제7조(자료 제공) 위원회는 등록금 책정 관련 자료를 총장에게 요청할 수 있고, 총장은 이를 성실히 제공하여야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "보 칙",
+        "body": "제8조(보칙) 이 규정에서 정하지 아니한 사항에 대해서는 위원회의 심의를 통해 총장이 정한다."
+      }
+    ],
+    "addenda": [
+      "(시행일) 이 시행 세칙은 2011년 11월 3일부터 시행된다.",
+      "(시행일) 이 시행 세칙은 2014년 8월 28일부터 시행된다.",
+      "(시행일) 이 시행 세칙은 2015년 12월 17일부터 시행된다.",
+      "(시행일) 이 시행 세칙은 2020년 07월 10일부터 시행된다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 158,
+    "l0": "일반행정",
+    "l1": "재무회계",
+    "index_no": "1",
+    "toc_title": "등록금심의위원회 운영세칙",
+    "parsed_title": "등록금심의위원회 운영세칙",
+    "enact_date": "2011.11.03",
+    "amend_dates": [
+      "2011.11.03"
+    ],
+    "article_count": 8,
+    "articles": [
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 고등 교육법 제11조및 대학 등록금에 관한 규칙 제2조와 아세아연합신학대학교 (이하“본교”라 한다) 학칙 제66조에서 규정하고 있는 등록금 심의 위원회(이하“위원회”라 한다)의 구성 및 운영에 관한 사항을 정함을 목적으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "기능",
+        "body": "제2조(기능) 위원회는 본교의 등록금 책정에 관한 사항을 심의한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "구성",
+        "body": "제3조(구성) ① 위원회는 7 인 이상의 위원으로 구성하며 총장이 임명한다. ② 위원회는 다음 각 호로 구성 단위를 대표할 수 있는 자로 구성하되, 학부모 또는 동문(同門)을 포함할 수 있다. 1. 교수 및 직원(학교 법인이 추천하는 재단 인사 포함) 2. 학생 3. 관련 전문가(해당 학교와 직접적인 이해관계가 있는 자는 제외) ③ 제2항에 따라 어느 하나의 구성 단위에 속하는 위원의 수는 전체 위원 정수(定數)의 2분의 1을 초과하여서는 안 되고, 학부모 및 동문 위원의 총수는 전체 위원 정수의 7분의 1을 초과하여서는 안 된다. ④ 위원장은 위원 중에서 총장이 임명하며 회의 소집 및 진행을 담당한다. ⑤ 위원회 업무의 원활한 수행을 위해 간사를 둘 수 있으며, 간사는 본교 교직원 중에 서 총장이 임명한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "임기",
+        "body": "제4조(임기) 위원의 임기는 1년으로 한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "회의",
+        "body": "제5조(회의) ① 회의는 총장의 요청이 있거나, 위원장이 필요하다고 인정하는 경우 또는 재적 위원 1/3이상의 요구가 있는 때에 소집한다. ② 위원회의 개회는 교직원 및 학생이 각 1 인 이상 출석하여야하며, 재적 위원 과반수의 출석으로 개회한다. ③ 위원장의 유고 시, 위원 중 연장자가 그 직무를 대행한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "회의록",
+        "body": "제6조(회의록) ① 위원회는 회의의 일시, 장소, 발언 요지, 결정 사항 등이 기록된 회의록을 작성하고 보존하여야한다. ② 회의록은 위원회의 동의가 있는 경우 공개할 수 있다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "자료 제공",
+        "body": "제7조(자료 제공) 위원회는 등록금 책정 관련 자료를 총장에게 요청할 수 있고, 총장은 이를 성실히 제공하여야한다."
+      },
+      {
+        "chapter": null,
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "보 칙",
+        "body": "제8조(보칙) 이 규정에서 정하지 아니한 사항에 대해서는 위원회의 심의를 통해 총장이 정한다."
+      }
+    ],
+    "addenda": [
+      "① (시행일) 이 시행 세칙은 2011년 11월 3일부터 시행한다."
+    ],
+    "attachments": [],
+    "pdf_pages": []
+  },
+  {
+    "seq": 159,
+    "l0": "학사",
+    "l1": null,
+    "index_no": "1",
+    "toc_title": "외국인 유학생 관리 규정",
+    "parsed_title": "외국인 유학생 관리 규정",
+    "enact_date": "2026.05.26",
+    "amend_dates": [
+      "2026.05.26"
+    ],
+    "article_count": 17,
+    "articles": [
+      {
+        "chapter": "제1장 총칙",
+        "section": null,
+        "gwan": null,
+        "no": "1",
+        "sub_no": null,
+        "title": "목적",
+        "body": "제1조(목적) 이 규정은 교육부의 ‘외국인 유학생 및 표준 업무 처리 요령’ 및 법무부 ‘출입국관리법’에 근거하여 외국인 유학생 관리에 관한 제반 사항을 정함을 목적으로 한다."
+      },
+      {
+        "chapter": "제1장 총칙",
+        "section": null,
+        "gwan": null,
+        "no": "2",
+        "sub_no": null,
+        "title": "정의",
+        "body": "제2조(정의) “외국인 유학생”이라 함은 외국 국적을 가진 자로서 본교 학위 과정에 등록하여 수학 중인 외국인(D-2 체류 자격자 포함)을 말한다."
+      },
+      {
+        "chapter": "제1장 총칙",
+        "section": null,
+        "gwan": null,
+        "no": "3",
+        "sub_no": null,
+        "title": "적용 범위",
+        "body": "제3조(적용 범위) 이 규정은 본교 외국인 학부 유학생 관리에 적용한다."
+      },
+      {
+        "chapter": "제2장 유학생 입학자격 및 조직",
+        "section": null,
+        "gwan": null,
+        "no": "4",
+        "sub_no": null,
+        "title": "입학 자격",
+        "body": "제4조(입학 자격) ① 유학생의 학부 신입학 자격은 다음과 같다. 1. 고등학교(졸업 예정) 이상의 학력을 소유한 자 또는 자국에서 12년 이상 학력 과정 이수자. 기타 법령에 의한 대학 입학 능력이 인정된 자. 2. 당해 모집에 기재된 지원 자격을 갖춘 자."
+      },
+      {
+        "chapter": "제2장 유학생 입학자격 및 조직",
+        "section": null,
+        "gwan": null,
+        "no": "5",
+        "sub_no": null,
+        "title": "언어 능력",
+        "body": "제5조(언어 능력) ① 유학생의 학부 입학에 필요한 언어 능력은 다음과 같다. 1. 한국어 과정은 한국어 교육원에서 2 학기 이상 수료한 자(출석률 70 % 이상) 또는 TOPIK 2 급 이상 취득한 자. (입학 후 1년간 300시간 이상의 한국어 연수 필수 이수) 2. 영어 과정은 영어 능력 시험 (IELTS 5.5, TOEFL 530, TOEFL iBT 71, CEFR B2, TEPS 326) 이상으로 한다."
+      },
+      {
+        "chapter": "제2장 유학생 입학자격 및 조직",
+        "section": null,
+        "gwan": null,
+        "no": "6",
+        "sub_no": null,
+        "title": "입학 주관 부서",
+        "body": "제6조(입학 주관 부서) 유학생 입학 주관 부서는 학부 교학 지원 2 팀으로 지정한다."
+      },
+      {
+        "chapter": "제3장 유학생 생활 관리",
+        "section": null,
+        "gwan": null,
+        "no": "7",
+        "sub_no": null,
+        "title": "주관 부서의 업무",
+        "body": "제7조(주관 부서의 업무) ① 본 규정의 적용 대상인 외국인 유학생에 대한 관리 책임은 학부 교학 지원 2 팀에서 전담하며, 다음 사항을 주관한다. 1. 외국인 유학생의 입학, 학사, 생활, 안전, 비자 등 종합 관리 및 행정 지원 2. 유학생 상담, 출석률, 학업 성취도 모니터링 및 중도 탈락 방지 활동 3. 법무부 유학생 정보 시스템 운영 및 출입국 기관 대응 4. 보험 가입, 장학금, 민원 응대 및 학적 변동 관련 처리 등"
+      },
+      {
+        "chapter": "제3장 유학생 생활 관리",
+        "section": null,
+        "gwan": null,
+        "no": "8",
+        "sub_no": null,
+        "title": "학생 상담",
+        "body": "제8조(학생 상담) 외국인 학생 담당 부서는 외국인 학생들의 적응 및 학업 지도에 관하여 소속 학과 및 학과장 교수와의 상담을 지원하여, 전문적인 상담이 이루어질 수 있도록한다."
+      },
+      {
+        "chapter": "제3장 유학생 생활 관리",
+        "section": null,
+        "gwan": null,
+        "no": "9",
+        "sub_no": null,
+        "title": "보험 가입 의무",
+        "body": "제9조(보험 가입 의무) ① 모든 유학생은 「국민 건강 보험 법」에 따른 외국인 지역 가입 의무를 따른다. ② 교내 단체 상해 보험에 가입하여야하며, 담당자는 보험 제도, 보상 절차, 병원 이용 안내를 오리엔테이션 및 상담 시 고지하여야한다."
+      },
+      {
+        "chapter": "제4장 유학생 학사 관리",
+        "section": null,
+        "gwan": null,
+        "no": "10",
+        "sub_no": null,
+        "title": "학사 운영",
+        "body": "제10조(학사 운영) ① 수강 신청, 출석, 시험, 학점 이수 등 일반 사항은 본교 학칙 및 관련 규정에 따른다. ② 출석률· 성적 미달 등 학사 부진으로 체류 자격 유지가 어려운 경우 담당자는 출입국 기관에 변동 신고를 하여야한다."
+      },
+      {
+        "chapter": "제4장 유학생 학사 관리",
+        "section": null,
+        "gwan": null,
+        "no": "11",
+        "sub_no": null,
+        "title": "휴학",
+        "body": "제11조(휴학) ① 유학생의 휴학은 원칙적으로 불허한다. 다만, 임신· 출산· 질병· 국가적 재난 및 기타 불가항력 사유가 객관적으로 입증될 경우 총장의 승인으로 허가할 수 있다. ② 부득이하게 휴학을 하게 되는 유학생은 본 학칙과 「출입국관리법」 등 관련 법령의 절차에 따라야한다."
+      },
+      {
+        "chapter": "제4장 유학생 학사 관리",
+        "section": null,
+        "gwan": null,
+        "no": "12",
+        "sub_no": null,
+        "title": "제적",
+        "body": "제12조(제적) ① 학생이 본교 학칙, 「출입국관리법」 또는 본 규정을 위반한 경우 제적할 수 있다. 다만 제적 시에는 학생에게 소명 기회를 부여하고, 그 결과를 서면으로 통지하여야한다. ② 소명 요청 및 제적 통지는 학생이 본교에 제출한 최신 연락처(전화번호, 이메일)를 통해 2회 이상 통지하며, 회신이 없거나 연락이 불가능한 경우 본교 외국인 학생 공지 게시판에 7일 이상 공고함으로써 통지에 갈음할 수 있다. ③ 제적 처분이 확정된 경우, 담당자는 7일 이내에 출입국 기관에 해당 사실을 신고하고, 제적 통지를 완료한다. 제2항의절차를 완료한 경우에는 통지 의무를 이행한 것으로 본다."
+      },
+      {
+        "chapter": "제4장 유학생 학사 관리",
+        "section": null,
+        "gwan": null,
+        "no": "13",
+        "sub_no": null,
+        "title": "자퇴",
+        "body": "제13조(자퇴) ① 외국인 유학생이 자퇴를 신청하는 경우, 본교 학칙에 따른 자퇴 절차를 완료한 후, 「출입국관리법」에 따라 체류 자격이 소멸될 수 있으므로, 자퇴 일로부터 30일 이내에 반드시 출국하여야한다. ② 출국이 지연될 경우, 「출입국 관리법」 위반에 따른 과태료 부과, 향후 체류 허가 제한 등 행정 처분을 받을 수 있으며, 이에 대한 모든 법적 책임은 학생 본인에게 있다."
+      },
+      {
+        "chapter": "제4장 유학생 학사 관리",
+        "section": null,
+        "gwan": null,
+        "no": "14",
+        "sub_no": null,
+        "title": "수업료 환불",
+        "body": "제14조(수업료 환불) ① 다음 각 호의 어느 하나에 해당하는 경우, 수업료는 환불하지 아니한다. 1. 본교 학칙 또는 「출입국관리법」을 위반하여 제적된 경우 2. 사전 신고 없이 무단으로 자퇴 또는 출국한 경우 ② 자퇴· 질병, 그 밖의 불가피한 사유로 학업을 중단한 유학생에 대해서는 다음 기준에 따라 수업료를 환불한다. 1. 입학금 및 장학금은 환불 대상에서 제외한다. 2. 수업료 환불 기준은 본교 학칙 및 등록금 반환 규정에 따른다."
+      },
+      {
+        "chapter": "제5장 등록금 및 장학금",
+        "section": null,
+        "gwan": null,
+        "no": "15",
+        "sub_no": null,
+        "title": "등록금 및 장학금",
+        "body": "제15조(등록금 및 장학금) ① 외국인 유학생은 별도로 정한 등록 기간 내 수업료를 납부하여야한다. ② 외국인 유학생은 장학금 지급 절차에 따라 장학금을 지급 받을 수 있으며, 한국어능력시험(TOPIK) 급수 및 직전 학기 성적 등에 따라 장학금을 차등 지급할 수 있다."
+      },
+      {
+        "chapter": "제6장 유학생 준수사항",
+        "section": null,
+        "gwan": null,
+        "no": "16",
+        "sub_no": null,
+        "title": "준수 사항",
+        "body": "제16조(준수 사항) ① 외국인 유학생은 본교에 수학하는 동안 다음 각 호의 사항을 준수하여야한다. 1. 외국인 유학생은 대학의 명예를 손상시켜서는 안 된다. 2. 외국인 유학생으로서의 신분에 위배되는 활동을 할 수 없다. 3. 외국인 유학생은 유학 기간이 끝나면 즉시 귀국하여야한다. 다만 취업(시간제 취업 포함)을 한 학생의 경우 「출입국관리법」 및 관련 규정에 따른다. 4. 외국인 유학생은 재학 중 시간제 취업을 할 경우, 체류 자격 외 활동 허가 신고를 하여야한다. 5. 외국인 유학생은 체류 지(주소지)를 변경했을 경우 전입한 날로부터 15일 이내 해당 출입국 관리 사무소에 신고하여야한다. 6. 외국인 유학생은 「출입국관리법」을 준수하여야하며, 국내 체류 기간 및 출입국 과정에서 일어나는 개인 신상에 대해서는 본인이 책임을 진다."
+      },
+      {
+        "chapter": "제7장 보칙",
+        "section": null,
+        "gwan": null,
+        "no": "17",
+        "sub_no": null,
+        "title": "준용 규정",
+        "body": "제17조(준용 규정) 이 규정에 명시되지 아니한 사항(강사의 임용, 관리, 그리고 강사 료 지급에 관한 세부 사항 포함)은 「출입국관리법」, 「고등 교육법」, 본교 학칙 및 시행 세칙, 기타 관련 내규를 준용한다."
+      }
+    ],
+    "addenda": [],
+    "attachments": [],
+    "pdf_pages": []
   }
 ]
