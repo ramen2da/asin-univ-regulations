@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 
 from routers import admin, regulations, tree
 
-app = FastAPI(title="아신대학교 규정정보시스템")
+app = FastAPI(title="아신대학교 규정관리시스템")
 
 app.include_router(tree.router, prefix="/api")
 app.include_router(regulations.router, prefix="/api")
