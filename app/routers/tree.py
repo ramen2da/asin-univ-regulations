@@ -6,6 +6,13 @@ from db import get_connection
 
 router = APIRouter()
 
+# Top-level category display order. Regulation seq values were assigned as
+# each category's content was added over time (정관 first, 일반행정/부속기관/
+# 산학협력단 next, 학사/대학원 last), so sorting purely by seq would not give
+# the intended reading order - list it explicitly instead. Anything not in
+# this list (there is currently nothing) sorts after, in first-seen order.
+CATEGORY_ORDER = ["정관", "학사", "대학원", "일반행정", "부속기관 및 부설기관", "산학협력단"]
+
 
 @router.get("/tree")
 def get_tree():
@@ -27,8 +34,17 @@ def get_tree():
         tree[l0].setdefault(key, [])
         tree[l0][key].append({"id": r["id"], "title": r["title"], "seq": r["seq"]})
 
+    def category_rank(l0):
+        try:
+            return CATEGORY_ORDER.index(l0)
+        except ValueError:
+            return len(CATEGORY_ORDER)
+
+    ordered_l0 = sorted(tree.keys(), key=category_rank)
+
     result = []
-    for l0, subs in tree.items():
+    for l0 in ordered_l0:
+        subs = tree[l0]
         node = {"name": l0, "type": "category", "children": []}
         direct = subs.pop("__direct__", [])
         for reg in direct:

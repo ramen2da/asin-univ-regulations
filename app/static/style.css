@@ -779,7 +779,7 @@ table.compare-table .compare-new {
   margin-bottom: 18px;
   scroll-margin-top: 16px;
   line-height: 1.8;
-  font-size: 15.5px;
+  font-size: 0.97em;
 }
 .chapter-tag {
   display: inline-block;
@@ -864,7 +864,7 @@ table.inline-table tr:first-child td {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px dashed var(--border-strong);
-  font-size: 13.5px;
+  font-size: 0.84em;
   color: var(--text-muted);
 }
 .addenda-sep {
