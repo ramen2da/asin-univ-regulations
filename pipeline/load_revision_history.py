@@ -9,6 +9,9 @@ import json
 import sqlite3
 from datetime import datetime, timezone
 
+sys.path.insert(0, os.path.dirname(__file__))
+from amendment_utils import insert_amendment_chronologically
+
 SEED_PATH = os.path.join(os.path.dirname(__file__), 'output', 'revision_history_seed.json')
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'regulations.db')
 
@@ -69,13 +72,7 @@ def main():
             (regid, entry['revised_at']),
         ).fetchone()
         if not already:
-            max_ord = cur.execute(
-                'SELECT COALESCE(MAX(ordinal), -1) FROM amendments WHERE regulation_id=?', (regid,)
-            ).fetchone()[0]
-            cur.execute(
-                'INSERT INTO amendments (regulation_id, amend_date, ordinal) VALUES (?, ?, ?)',
-                (regid, entry['revised_at'], max_ord + 1),
-            )
+            insert_amendment_chronologically(cur, regid, entry['revised_at'])
             amendments_created += 1
 
     conn.commit()

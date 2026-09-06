@@ -10,6 +10,7 @@ from build_revision_history import (
     strip_for_noise_check,
     resolve_change_date,
 )
+from amendment_utils import insert_amendment_chronologically
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "regulations.db")
 REGULATION_ID = 120
@@ -103,13 +104,7 @@ def main():
             )
             changes_created += 1
         if dotted not in existing_amend_dates:
-            max_ord = cur.execute(
-                "SELECT COALESCE(MAX(ordinal), -1) FROM amendments WHERE regulation_id=?", (REGULATION_ID,)
-            ).fetchone()[0]
-            cur.execute(
-                "INSERT INTO amendments (regulation_id, amend_date, ordinal) VALUES (?, ?, ?)",
-                (REGULATION_ID, dotted, max_ord + 1),
-            )
+            insert_amendment_chronologically(cur, REGULATION_ID, dotted)
             existing_amend_dates.add(dotted)
             amendments_created += 1
 

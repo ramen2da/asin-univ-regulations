@@ -8,6 +8,7 @@ from collections import defaultdict, Counter
 
 sys.path.insert(0, os.path.dirname(__file__))
 from fix_spacing import collect_stats, find_candidates, apply_fix
+from amendment_utils import insert_amendment_chronologically
 
 HIST_DIR = os.path.join(os.path.dirname(__file__), 'output', 'history')
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'regulations.db')
@@ -337,13 +338,7 @@ def main():
                 changes_created += 1
 
             if date not in existing_amend_dates[regid]:
-                max_ord = cur.execute(
-                    'SELECT COALESCE(MAX(ordinal), -1) FROM amendments WHERE regulation_id=?', (regid,)
-                ).fetchone()[0]
-                cur.execute(
-                    'INSERT INTO amendments (regulation_id, amend_date, ordinal) VALUES (?, ?, ?)',
-                    (regid, date, max_ord + 1),
-                )
+                insert_amendment_chronologically(cur, regid, date)
                 existing_amend_dates[regid].add(date)
                 amendments_created += 1
 
