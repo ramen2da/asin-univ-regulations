@@ -28,12 +28,12 @@ def insert_amendment_chronologically(cur, regulation_id, amend_date):
 
     insert_at = len(existing)
     for i, row in enumerate(existing):
-        if row['amend_date'] > amend_date:
+        if row[1] > amend_date:
             insert_at = i
             break
 
     for row in existing[insert_at:]:
-        cur.execute('UPDATE amendments SET ordinal=? WHERE id=?', (row['ordinal'] + 1, row['id']))
+        cur.execute('UPDATE amendments SET ordinal=? WHERE id=?', (row[2] + 1, row[0]))
 
     cur.execute(
         'INSERT INTO amendments (regulation_id, amend_date, ordinal) VALUES (?, ?, ?)',
